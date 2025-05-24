@@ -283,7 +283,7 @@ table {
 }
 /* ==========================================================================Section Styles========================================================================== */
 .section-padding {
-	padding:90px 0 100px
+	padding-top: 120px;
 }
 .dark-bg {
 	background:#f3f5f8;
@@ -377,12 +377,14 @@ table {
 }
 /* Menu */
 .menu-wrap {
-	z-index:999;
-	background: rgba(7, 57, 60, 0.95);
-	-webkit-transition:width 0.4s,height 0.4s,-webkit-transform 0.4s;
-	transition:width 0.4s,height 0.4s,transform 0.4s;
-	-webkit-transition-timing-function:cubic-bezier(0.7,0,0.3,1);
-	transition-timing-function:cubic-bezier(0.7,0,0.3,1);
+    z-index: 999;
+    background: rgba(7, 57, 60, 0.95);
+    -webkit-transition: width 0.4s, height 0.4s, -webkit-transform 0.4s;
+    transition: width 0.4s, height 0.4s, transform 0.4s;
+    -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+    transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+    height: auto;
+    padding: 10px 0;
 }
 .menu {
 	height:100%;
@@ -413,19 +415,20 @@ table {
 }
 /* Shown menu */
 .show-menu .content-wrap {
-	-webkit-transition-delay:0s;
-	transition-delay:0s;
-	-webkit-transform:translate3d(0,125px,0);
-	transform:translate3d(0,125px,0);
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    -webkit-transform: translate3d(0, 60px, 0);
+    transform: translate3d(0, 60px, 0);
 }
 .show-menu .menu-wrap {
-	width:100%;
-	height:125px;
-	-webkit-transform:translate3d(0,0,0);
-	transform:translate3d(0,0,0);
-	-webkit-transition-delay:0s;
-	transition-delay:0s;
-	border-bottom: 1px solid #90DDf0;
+    width: 100%;
+    height: auto;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    border-bottom: 1px solid #90DDf0;
+    padding: 10px 0;
 }
 .show-menu .icon-list a {
 	opacity:1;
@@ -1516,4 +1519,63 @@ Portfolio Styles
 .view-btn:hover {
   background: #fff;
   color: #07393C;
+}
+
+/* Page Headers */
+.page-header {
+    padding: 120px 0 60px;
+    background: #01021e;
+    margin: 0;
+    position: relative;
+}
+
+.page-header h1 {
+    font-size: 60px;
+    letter-spacing: -3px;
+    margin: 0;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.page-header h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: 300;
+    color: #6da999;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+/* Menu Button Styles */
+.menu-button {
+    background: transparent;
+    border: none;
+}
+
+.dark-bg .menu-button::before {
+    background: linear-gradient(#07393C 20%, transparent 20%, transparent 40%, #07393C 40%, #07393C 60%, transparent 60%, transparent 80%, #07393C 80%);
+}
+
+.light-bg .menu-button::before {
+    background: linear-gradient(#fff 20%, transparent 20%, transparent 40%, #fff 40%, #fff 60%, transparent 60%, transparent 80%, #fff 80%);
+}
+
+/* Menu Icon Colors */
+.dark-bg .icon-list a {
+    color: #07393C;
+}
+
+.dark-bg .icon-list a span {
+    color: #07393C;
+}
+
+.light-bg .icon-list a,
+.light-bg .icon-list a span {
+    color: #fff;
+}
+
+/* Adjust content padding for menu */
+.section-padding {
+    padding-top: 120px;
 }
