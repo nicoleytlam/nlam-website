@@ -103,6 +103,7 @@ html,button,input,select,textarea {
 body {
 	margin:0;
 	font-family: 'Open Sans',sans-serif;
+	padding-bottom: 80px;
 }
 /* ==========================================================================Links========================================================================== */
 a:focus {
@@ -358,21 +359,32 @@ table {
     z-index: 1000;
     margin: 0;
     padding: 0;
+    width: 2.5em;
+    height: 2.25em;
     border: none;
     text-indent: 2.5em;
     color: transparent;
-    background: rgba(0, 0, 0, 0.515); /* same as menu */
-    border-radius: 4px; /* optional for slightly rounded edges */
+    background: rgba(0, 0, 0, 0.515); /* semi-transparent black */
+    border-radius: 4px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 1.5em;
+    left: 1.5em;
 }
 .menu-button::before {
-	position:absolute;
-	top:0.5em;
-	right:0.5em;
-	bottom:0.5em;
-	left:0.5em;
-	background: linear-gradient(#fff 20%, transparent 20%, transparent 40%, #fff 40%, #fff 60%, transparent 60%, transparent 80%, #fff 80%);
-	content:'';
+    content: '';
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    bottom: 0.5em;
+    left: 0.5em;
+    background: linear-gradient(
+        #fff 20%, transparent 20%, transparent 40%,
+        #fff 40%, #fff 60%, transparent 60%, transparent 80%, #fff 80%
+    );
+    border-radius: 2px;
 }
+
 .menu-button:hover {
 	opacity: 0.8;
 }
