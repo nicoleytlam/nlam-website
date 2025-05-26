@@ -27,10 +27,11 @@
         color: #fff;
         margin: 0;
       }
-      .featured-quote footer {
+      .quote-citation {
         color: #ccc;
         margin-top: 20px;
         font-size: 18px;
+        text-align: right;
       }
       .about-content {
         color: #fff;
@@ -47,6 +48,25 @@
         border-radius: 10px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       }
+      .closing-section {
+        margin-top: 60px;
+        padding-top: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .closing-quote {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 40px;
+        margin-top: 40px;
+        margin-bottom: 80px;
+      }
+      .closing-quote p {
+        font-size: 24px;
+        line-height: 1.4;
+        font-style: italic;
+        color: #fff;
+        margin: 0;
+      }
       @media (max-width: 991px) {
         .about-image-float {
           float: none;
@@ -58,13 +78,19 @@
         .featured-quote p {
           font-size: 24px;
         }
+        .closing-quote p {
+          font-size: 20px;
+        }
       }
       @media (max-width: 767px) {
-        .featured-quote {
+        .featured-quote, .closing-quote {
           padding: 30px;
         }
         .featured-quote p {
           font-size: 20px;
+        }
+        .closing-quote p {
+          font-size: 18px;
         }
         .about-content {
           font-size: 16px;
@@ -116,7 +142,7 @@
           <!-- Featured Quote -->
           <div class="featured-quote">
             <p>"Nicole's presence in rehearsal rooms has been transformative — her artistry, rigor, and joy have elevated every ensemble she led."</p>
-            <footer>— <strong>YaleNews</strong>, Louis Sudler Prize Citation</footer>
+            <div class="quote-citation">— YaleNews</div>
           </div>
 
           <!-- Biography with Interspersed Image -->
@@ -134,11 +160,19 @@
 
           <p>As a pianist and vocalist, Nicole studied under <strong>Professor Elizabeth Parisot</strong> for four years, performing annual solo recitals and earning <strong>first prize</strong> in both the <strong>Houston International Music Competition</strong> and the <strong>Steinway Junior Southern California Competition</strong>. As an alto, she has performed with the <strong>Yale Glee Club</strong> and <strong>Yale Schola Cantorum</strong> and sung with multiple church choirs.</p>
 
-          <p>Nicole is the <strong>Founder and Director of Operations</strong> of <em>Love Through Music</em>, a national nonprofit that brings music to underserved communities. The organization has mobilized over 500 student performers and presented more than 50 charity concerts at retirement homes and veterans hospitals. She has also led two service trips to Nepal, delivering donated instruments and supplies to the Shree Narayan Secondary School in Kathmandu.</p>
+          <p>Nicole is the <strong>Founder and Director of Operations</strong> of <em>Love Through Music</em>, a national nonprofit with a mission to share music with meaning to underserved communities. Since 2017, the organization has mobilized over 500 student performers and presented more than 50 charity concerts at retirement homes and veterans hospitals. She has also led two service trips to Nepal, delivering donated instruments and supplies to the Shree Narayan Secondary School in Kathmandu.</p>
+        
+          <p>Equally dedicated to education, Nicole has been a <strong>private tutor and college consultant</strong> for over 150 students since 2018. She specializes in teaching all levels of mathematics, from algebra 1 to differential equations. Additionally, Nicole also has had copious experience teaching music theory and test prep (SAT/ACT/AP) and doing tailored college consulting. Many of Nicole's students have gone onto top colleges such as Harvard, Yale, Northwestern, USC, UCLA, and more. </p>
 
-          <p>Nicole graduated <strong>cum laude</strong> from <strong>Yale University</strong> with <strong>dual distinction in Applied Mathematics and Computer Science</strong>, and completed her <strong>Master's in Computer Science</strong> as part of Yale's selective combined B.S./M.S. program. She conducted machine learning research at the Yale Smart Medicine Lab and interned at the <strong>Yale Investments Office</strong>, where she built a Python-based model comparing marketable and illiquid asset fee structures. She later joined <strong>D. E. Shaw & Co.</strong> as an intern in their Investment Management division.</p>
+          <p>Nicole graduated <strong>cum laude</strong> from <strong>Yale University</strong> with a <strong>double major and dual distinction in Applied Mathematics and Computer Science</strong>, and completed her <strong>Master's in Computer Science</strong> as part of Yale's selective combined B.S./M.S. program <strong>all in four years</strong>. She conducted machine learning research at the Yale Smart Medicine Lab and interned at the <strong>Yale Investments Office</strong>, where she built a Python-based model comparing marketable and illiquid asset fee structures. She later joined <strong>D. E. Shaw & Co.</strong> as an intern in their Investment Management division.</p>
 
           <p><strong>Now based in New York City</strong>, Nicole remains deeply committed to a people-centered approach to music making. She looks forward to learning from every musician, mentor, and community she meets, and continuing to create spaces where music brings out the best in all of us.</p>
+
+          <!-- Closing Quote -->
+          <div class="closing-quote">
+            <p>"A versatile and passionate artist, Nicole has touched thousands who have heard her play the piano, listened to her sing, or watched her conduct."</p>
+            <!-- <div class="quote-citation">— YaleNews, Louis Sudler Prize Citation</div> -->
+          </div>
         </div>
       </div>
     </section>
