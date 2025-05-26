@@ -14,45 +14,60 @@ $(function() {
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });
+
+    // Set active menu item based on current page
+    var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    $('.icon-list a').each(function() {
+        var href = $(this).attr('href');
+        if (href === currentPage) {
+            $(this).addClass('active');
+        }
+    });
 });
 
 /******************************************************************************************************************************
 Menu
 *******************************************************************************************************************************/ 
 (function() {
-
 	var bodyEl = document.body,
-		//content = document.querySelector( '.content-wrap' ),
-		openbtn = document.getElementById( 'open-button' ),
-		closebtn = document.getElementById( 'close-button' ),
+		menuWrap = document.querySelector('.menu-wrap'),
+		openbtn = document.getElementById('open-button'),
 		isOpen = false;
 
 	function init() {
 		initEvents();
+		// Only preserve menu state if user has toggled it before
+		if (sessionStorage.getItem('menuOpen') === 'true' && sessionStorage.getItem('menuVisited') === 'true') {
+			toggleMenu();
+		}
+	
+		// Set visited flag so future page loads can respect toggle
+		sessionStorage.setItem('menuVisited', 'true');
 	}
 
 	function initEvents() {
-		openbtn.addEventListener( 'click', toggleMenu );
-		if( closebtn ) {
-			closebtn.addEventListener( 'click', toggleMenu );
-		}
-
-		/* close the menu element if the target it´s not the menu element or one of its descendants..
-		content.addEventListener( 'click', function(ev) {
-			var target = ev.target;
-			if( isOpen && target !== openbtn ) {
+		openbtn.addEventListener('click', function(ev) {
+			ev.stopPropagation();
+			toggleMenu();
+		});
+		
+		// Close menu when clicking outside
+		document.addEventListener('click', function(ev) {
+			if (isOpen && !menuWrap.contains(ev.target) && ev.target !== openbtn) {
 				toggleMenu();
 			}
-		} );
-		*/
+		});
 	}
 
 	function toggleMenu() {
-		if( isOpen ) {
-			classie.remove( bodyEl, 'show-menu' );
-		}
-		else {
-			classie.add( bodyEl, 'show-menu' );
+		if (isOpen) {
+			classie.remove(bodyEl, 'show-menu');
+			menuWrap.style.height = '0px';
+			sessionStorage.setItem('menuOpen', 'false');
+		} else {
+			classie.add(bodyEl, 'show-menu');
+			menuWrap.style.height = window.innerWidth <= 767 ? 'auto' : '75px';
+			sessionStorage.setItem('menuOpen', 'true');
 		}
 		isOpen = !isOpen;
 	}
