@@ -393,6 +393,7 @@ table {
 	transition: height 0.3s ease;
 	background: rgba(0, 0, 0, 0.9);
 	overflow: hidden;
+	height: 0;
 }
 
 
@@ -419,7 +420,7 @@ table {
     font-size: 0.5em;
     font-weight: 700;
     padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding-bottom: 1em;
     transition: color 0.3s ease;
 }
 

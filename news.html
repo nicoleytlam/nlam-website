@@ -13,6 +13,111 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <!-- Add Masonry.js -->
+    <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+    <style>
+      .news-filters {
+        margin-bottom: 30px;
+      }
+      .filter-btn {
+        margin: 5px;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 20px;
+        background: #f8f9fa;
+        transition: all 0.3s ease;
+      }
+      .filter-btn:hover, .filter-btn.active {
+        background: #007bff;
+        color: white;
+      }
+      .news-grid {
+        margin: 0 -15px;
+      }
+      .news-grid-sizer,
+      .news-grid-item {
+        width: 33.333%;
+      }
+      .news-grid-item {
+        padding: 15px;
+      }
+      @media (max-width: 991px) {
+        .news-grid-sizer,
+        .news-grid-item {
+          width: 50%;
+        }
+      }
+      @media (max-width: 767px) {
+        .news-grid-sizer,
+        .news-grid-item {
+          width: 100%;
+        }
+      }
+      .news-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        break-inside: avoid;
+        margin-bottom: 30px;
+      }
+      .news-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      }
+      .news-image {
+        position: relative;
+        padding-top: 66.67%;
+        overflow: hidden;
+      }
+      .news-image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      .news-card:hover .news-image img {
+        transform: scale(1.05);
+      }
+      .news-content {
+        padding: 20px;
+      }
+      .news-date {
+        color: #6c757d;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+      }
+      .news-tag {
+        display: inline-block;
+        padding: 3px 10px;
+        border-radius: 15px;
+        font-size: 0.8em;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        background: #e9ecef;
+      }
+      .news-quote {
+        font-style: italic;
+        color: #495057;
+        margin: 10px 0;
+      }
+      .read-more {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        display: inline-block;
+        margin-top: 10px;
+      }
+      .read-more:hover {
+        color: #0056b3;
+        text-decoration: none;
+      }
+    </style>
   </head>
   <body class="light-bg">
     <!-- Preloader -->
@@ -44,34 +149,203 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-md-offset-2 text-center">
-            <h1 class="animated fadeInDown">News</h1>
-            <h3>Latest Updates</h3>
+            <h1 class="animated fadeInDown">News & Recognition</h1>
+            <h3>Latest Updates and Achievements</h3>
           </div>
         </div>
       </div>
     </section>
 
     <!-- News Section -->
-    <section class="text-center section-padding" id="news">
-
+    <section class="section-padding" id="news">
       <div class="container">
-        <div class="row">
-          <!-- Add your news items here -->
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div class="news-item">
+        <!-- Filters -->
+        <div class="text-center news-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="performances">Performances</button>
+          <button class="filter-btn" data-filter="awards">Awards & Recognition</button>
+          <button class="filter-btn" data-filter="features">Features & Profiles</button>
+        </div>
+
+        <div class="news-grid">
+          <div class="news-grid-sizer"></div>
+          
+          <!-- Sudler Citation -->
+          <div class="news-grid-item wow fadeInUp" data-category="awards">
+            <div class="news-card">
               <div class="news-image">
-                <img src="img/news/news-1.jpg" alt="News Item" class="img-fluid">
+                <img src="img/news/sudler.jpg" alt="Sudler Prize" class="img-fluid">
               </div>
               <div class="news-content">
-                <h3>News Title</h3>
-                <p class="date">January 1, 2024</p>
-                <p>News description goes here. This can be a brief summary of the news item.</p>
-                <a href="#" class="read-more">Read More</a>
+                <span class="news-tag">Award</span>
+                <h3>Awarded Prestigious Sudler Prize</h3>
+                <p class="news-date">May 18, 2025</p>
+                <p class="news-quote">"Nicole's presence in rehearsal rooms has been transformative — her artistry, rigor, and joy has elevated every ensemble she led."</p>
+                <a href="https://news.yale.edu/2025/05/18/distinguished-seniors-recognized-yale-colleges-top-prizes" class="read-more">Read More →</a>
               </div>
             </div>
           </div>
 
-          <!-- Add more news items as needed -->
+          <!-- Yale Graduation Profile -->
+          <div class="news-grid-item wow fadeInUp" data-delay="0.2s" data-category="features">
+            <div class="news-card">
+              <div class="news-image">
+                <img src="img/news/graduation.jpg" alt="Yale Graduation" class="img-fluid">
+              </div>
+              <div class="news-content">
+                <span class="news-tag">Profile</span>
+                <h3>Self-Discovery Through Mathematics and Music</h3>
+                <p class="news-date">May 12, 2025</p>
+                <p>A deep dive into Nicole's journey combining mathematics and music at Yale.</p>
+                <a href="https://news.yale.edu/2025/05/12/self-discovery-through-mathematics-and-music" class="read-more">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Junior Honors -->
+          <div class="news-grid-item wow fadeInUp" data-delay="0.3s" data-category="awards">
+            <div class="news-card">
+              <div class="news-content">
+                <span class="news-tag">Recognition</span>
+                <h3>Junior Honors Recognition</h3>
+                <p class="news-date">May 3, 2024</p>
+                <p class="news-quote">"She enjoys mentoring and leading others, encouraging her peers to get involved with the arts at Yale, and inspiring her fellow musicians to do their best work."</p>
+                <a href="https://news.yale.edu/2024/05/03/juniors-honored-leadership-scholarship-and-campus-contributions" class="read-more">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- West Side Story -->
+          <div class="news-grid-item wow fadeInUp" data-category="performances">
+            <div class="news-card">
+              <div class="news-image">
+                <img src="img/news/westside.jpg" alt="West Side Story" class="img-fluid">
+              </div>
+              <div class="news-content">
+                <span class="news-tag">Performance</span>
+                <h3>West Side Story Premieres</h3>
+                <p class="news-date">April 19, 2024</p>
+                <p class="news-quote">"The energy during dance scenes is palpable, invigorated by the live 13-piece orchestra directed by Nicole Lam '25."</p>
+                <a href="https://yaledailynews.com/blog/2024/04/19/west-side-story-premieres-this-weekend/" class="read-more">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Into The Woods -->
+          <div class="news-grid-item wow fadeInUp" data-delay="0.2s" data-category="performances">
+            <div class="news-card">
+              <div class="news-image">
+                <img src="img/news/intothewoods.jpg" alt="Into The Woods" class="img-fluid">
+              </div>
+              <div class="news-content">
+                <span class="news-tag">Performance</span>
+                <h3>Into The Woods: A Stunning Success</h3>
+                <p class="news-date">November 19, 2024</p>
+                <p class="news-quote">"Sonically, the show blew audiences away. The pit orchestra ran under the masterful guidance of Nicole Lam '25."</p>
+                <a href="https://yaledailynews.com/blog/2024/11/19/review-dramats-into-the-woods-is-a-quirky-stunning-rendition-of-sondheims-classic/" class="read-more">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- YSO Halloween Concert -->
+          <div class="news-grid-item wow fadeInUp" data-delay="0.3s" data-category="performances">
+            <div class="news-card">
+              <div class="news-content">
+                <span class="news-tag">Performance</span>
+                <h3>Yale Symphony Orchestra Halloween Concert</h3>
+                <p class="news-date">November 3, 2024</p>
+                <p>A spectacular performance featuring Laufey and human waves at the annual YSO Halloween show.</p>
+                <a href="https://yaledailynews.com/blog/2024/11/03/review-laufey-human-waves-social-clout-yale-symphony-orchestras-halloween-concert-delivers-yet-again/" class="read-more">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Great Comet -->
+          <div class="news-grid-item wow fadeInUp" data-category="performances">
+            <div class="news-card">
+              <div class="news-image">
+                <img src="img/news/greatcomet.jpg" alt="Great Comet" class="img-fluid">
+              </div>
+              <div class="news-content">
+                <span class="news-tag">Performance</span>
+                <h3>Great Comet Makes Long-Awaited Debut</h3>
+                <p class="news-date">December 8, 2023</p>
+                <p class="news-quote">"Musical director Nicole Lam '25, legendary among singers at Yale for her talent as a vocal coach"</p>
+                <a href="https://yaledailynews.com/blog/2023/12/08/natasha-pierre-the-great-comet-of-1812-makes-long-awaited-debut/" class="read-more">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- BCO Serenade -->
+          <div class="news-grid-item wow fadeInUp" data-category="performances">
+            <div class="news-card">
+              <div class="news-content">
+                <span class="news-tag">Performance</span>
+                <h3>Berkeley College Orchestra: Serenade of Memory and Destiny</h3>
+                <p class="news-date">November 14, 2023</p>
+                <p>A moving performance exploring themes of memory and destiny through masterful orchestration.</p>
+                <a href="https://yaledailynews.com/blog/2023/11/14/berkeley-college-orchestras-serenade-of-memory-and-destiny/" class="read-more">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- BCO Con Brio -->
+          <div class="news-grid-item wow fadeInUp" data-category="performances">
+            <div class="news-card">
+              <div class="news-content">
+                <span class="news-tag">Performance</span>
+                <h3>BCO Launches 48th Season with Con Brio</h3>
+                <p class="news-date">October 10, 2023</p>
+                <p class="news-quote">An attendee emphasized that while "not familiar with the technical elements of orchestra shows," the performance "blew his mind."</p>
+                <a href="https://yaledailynews.com/blog/2023/10/10/berkeley-college-orchestra-launches-48th-season-with-con-brio-performance/" class="read-more">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- YSO Assistant Conductor -->
+          <div class="news-grid-item wow fadeInUp" data-category="features">
+            <div class="news-card">
+              <div class="news-image">
+                <img src="img/news/yso-conductor.jpg" alt="YSO Assistant Conductor" class="img-fluid">
+              </div>
+              <div class="news-content">
+                <span class="news-tag">Appointment</span>
+                <h3>Appointed YSO Assistant Conductor</h3>
+                <p class="news-date">September 2023</p>
+                <p>Nicole takes on the role of Assistant Conductor for the Yale Symphony Orchestra.</p>
+                <a href="https://yso.yalecollege.yale.edu/about-us/assistant-conductor" class="read-more">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pasadena Now Profile -->
+          <div class="news-grid-item wow fadeInUp" data-category="features">
+            <div class="news-card">
+              <div class="news-image">
+                <img src="img/news/pasadena.jpg" alt="Pasadena Profile" class="img-fluid">
+              </div>
+              <div class="news-content">
+                <span class="news-tag">Profile</span>
+                <h3>Pasadena Now: A Musical Journey</h3>
+                <p class="news-date">2021</p>
+                <p>Profile featuring Nicole's journey as a concert pianist and mezzo-soprano opera singer.</p>
+                <a href="https://www.pasadenanow.com/pasadenaschools/nicole-lam-a-concert-pianist-and-a-mezzo-soprano-opera-singer-and-a-clairbourn-graduate/" class="read-more">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CSF Award -->
+          <div class="news-grid-item wow fadeInUp" data-category="awards">
+            <div class="news-card">
+              <div class="news-content">
+                <span class="news-tag">Award</span>
+                <h3>CSF Seymour Award Recipient</h3>
+                <p class="news-date">2020-2021</p>
+                <p>Recognized as the South Central Region recipient of the prestigious CSF Seymour Award.</p>
+                <a href="https://csf-cjsf.org/nicole-lam-seymour-award-2020-2021-south-central-region-recipient/" class="read-more">Read More →</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -99,5 +373,46 @@
     <script src="assets/lightbox/js/lightbox.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Initialize Masonry
+        var grid = document.querySelector('.news-grid');
+        var masonry = new Masonry(grid, {
+          itemSelector: '.news-grid-item',
+          columnWidth: '.news-grid-sizer',
+          percentPosition: true,
+          transitionDuration: '0.3s'
+        });
+
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            const filter = this.getAttribute('data-filter');
+            const items = document.querySelectorAll('.news-grid-item');
+            
+            items.forEach(item => {
+              const shouldShow = filter === 'all' || item.getAttribute('data-category') === filter;
+              item.style.display = shouldShow ? 'block' : 'none';
+            });
+
+            // Re-layout Masonry after filtering
+            masonry.layout();
+          });
+        });
+
+        // Layout Masonry after images have loaded
+        imagesLoaded(grid).on('progress', function() {
+          masonry.layout();
+        });
+      });
+
+      // Initialize WOW.js for animations
+      new WOW().init();
+    </script>
   </body>
 </html> 

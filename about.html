@@ -14,15 +14,61 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <style>
-      .quote-box {
-        border-left: 5px solid #ccc;
-        background: #f8f8f8;
-        padding: 20px;
-        margin-bottom: 30px;
-        font-style: italic;
+      .featured-quote {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 40px;
+        margin-bottom: 40px;
       }
-      .spacer-bottom {
-        height: 60px;
+      .featured-quote p {
+        font-size: 28px;
+        line-height: 1.4;
+        font-style: italic;
+        color: #fff;
+        margin: 0;
+      }
+      .featured-quote footer {
+        color: #ccc;
+        margin-top: 20px;
+        font-size: 18px;
+      }
+      .about-content {
+        color: #fff;
+        font-size: 18px;
+        line-height: 1.8;
+      }
+      .about-content p {
+        margin-bottom: 25px;
+      }
+      .about-image-float {
+        float: right;
+        margin: 5px 0 30px 30px;
+        width: 400px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      }
+      @media (max-width: 991px) {
+        .about-image-float {
+          float: none;
+          width: 100%;
+          max-width: 500px;
+          margin: 30px auto;
+          display: block;
+        }
+        .featured-quote p {
+          font-size: 24px;
+        }
+      }
+      @media (max-width: 767px) {
+        .featured-quote {
+          padding: 30px;
+        }
+        .featured-quote p {
+          font-size: 20px;
+        }
+        .about-content {
+          font-size: 16px;
+        }
       }
     </style>
   </head>
@@ -66,50 +112,33 @@
     <!-- About Section -->
     <section class="intro section-padding color-bg" id="about">
       <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            <!-- BIOGRAPHY CONTENT -->
-            <p><strong>Nicole Lam</strong> is a conductor and music director forging a path that spans the worlds of symphonic music and musical theatre. She is especially drawn to building communities where musicians feel empowered to bring their fullest creative selves, shaped by empathy, clarity, and a shared sense of purpose. Her leadership has been widely recognized for its rigor, joy, and transformative impact on the ensembles she leads.</p>
-
-            <p>In <strong>2025</strong>, Nicole was awarded <strong>Yale College’s highest arts prize, the Louis Sudler Prize</strong>, in recognition of her work as both a conductor and musical leader. She also received the <strong>Wrexham Prize for Music</strong> and the <strong>Joseph Selden Memorial Award</strong> for excellence in the arts and community leadership. Nicole studied conducting under <strong>Maestro William Boughton</strong> for three years and was appointed <strong>Assistant Conductor of the Yale Symphony Orchestra</strong> for the 2024–2025 season. In that role, she opened nearly every concert of the season, conducting works such as <em>Carlos Simon’s Four Black American Dances</em>, <em>Copland’s Fanfare for the Common Man</em>, and <em>Christopher Theofanidis’s Rainbow Serpent</em>. She also led the orchestra in the <strong>sold-out Halloween Show at Woolsey Hall</strong>, performing for an audience of over 2,600.</p>
-
-            <p>Nicole made her <strong>European conducting debut</strong> in March 2025, leading performances across <strong>North Macedonia and Greece</strong>, including concerts in Skopje, Thessaloniki, Delphi, Giannitsa, Volos, and a culminating performance at the <strong>Athens Megaron Concert Hall</strong>.</p>
-
-            <p>As <strong>Music Director of the Berkeley College Orchestra</strong> (2023–2025), Nicole led the group through a period of remarkable growth, tripling the ensemble’s size and dramatically expanding its artistic scope. She conducted four full-length concerts each year, bringing the orchestra back to Yale’s mainstage, <strong>Woolsey Hall</strong>, and programming major works including <em>Tchaikovsky’s Symphony No. 5</em>, <em>Beethoven’s Symphony No. 5</em> and <em>No. 7</em>, and <em>Dvořák’s New World Symphony</em>. Under her leadership, BCO became known not only for its ambitious programming but for its strong sense of community, with Nicole launching chamber music initiatives and leading open conducting workshops to cultivate emerging musical leadership and collaboration across campus.</p>
-
-            <p>Nicole’s music direction credits span musical theatre, opera, and concert work, including <em>Into the Woods</em> (<strong>Yale Dramatic Association 2024 Mainstage</strong>), <em>The Great Comet of 1812</em> (directed by <strong>Annette Jolles</strong>), <em>john & jen</em>, <em>Gypsy</em>, <em>Violet</em>, <em>Pippin</em>, <em>A Chorus Line</em>, <em>West Side Story</em>, and <em>Massenet’s Cendrillon</em>. A versatile and passionate artist, she has reached thousands through her work as a pianist, vocalist, and conductor—earning recognition for the clarity and care she brings to every production. She has collaborated with the <strong>Yale Schwarzman Center</strong>, <strong>Yale Artists Cabaret</strong>, and other producing organizations, and was selected as an <strong>inaugural participant in the David Lee Conducting Program</strong>. Nicole also served as a <strong>staff pianist for Yale’s Shen Musical Theatre Curriculum</strong>, playing for masterclasses with <strong>Joel Fram</strong>, <strong>Merri Sugarman</strong>, <strong>Andrea Burns</strong>, <strong>Alex Lacamoire</strong>, and others.</p>
-
-            <p>As a pianist and vocalist, Nicole studied under <strong>Elizabeth Parisot</strong> for four years, performing annual solo recitals and earning <strong>first prize</strong> in both the <strong>Houston International Music Competition</strong> and the <strong>Steinway Junior Southern California Competition</strong>. As an alto, she has performed with the <strong>Yale Glee Club</strong> and <strong>Yale Schola Cantorum</strong> and sung with multiple church choirs.</p>
-
-            <p>Nicole is the <strong>Founder and Director of Operations</strong> of <em>Love Through Music</em>, a national nonprofit that brings music to underserved communities. The organization has mobilized over 500 student performers and presented more than 50 charity concerts at retirement homes and veterans hospitals. She has also led two service trips to <strong>Nepal</strong>, delivering donated instruments and supplies to the <strong>Shree Narayan Secondary School</strong> in Kathmandu.</p>
-
-            <p>Nicole graduated <strong>cum laude</strong> from <strong>Yale University</strong> with <strong>dual distinction in Applied Mathematics and Computer Science</strong>, and completed her <strong>Master’s in Computer Science</strong> as part of Yale’s selective combined B.S./M.S. program. She conducted machine learning research at the <strong>Yale Smart Medicine Lab</strong> and interned at the <strong>Yale Investments Office</strong>, where she built a Python-based model comparing marketable and illiquid asset fee structures. She later joined <strong>D. E. Shaw & Co.</strong> as an intern in their <strong>Investment Management division</strong>.</p>
-
-            <p><strong>Now based in New York City</strong>, Nicole remains deeply committed to a people-centered approach to music making. She looks forward to learning from every musician, mentor, and community she encounters, and to continuing to build spaces where music brings out the best in all of us.</p>
-
-            <!-- QUOTE BOXES -->
-            <div class="row">
-              <div class="col-md-6">
-                <blockquote class="quote-box">
-                  <p>"Nicole’s presence in rehearsal rooms has been transformative — her artistry, rigor, and joy have elevated every ensemble she led."</p>
-                  <footer><strong>YaleNews</strong>, Louis Sudler Prize Citation</footer>
-                </blockquote>
-              </div>
-              <div class="col-md-6">
-                <blockquote class="quote-box">
-                  <p>"A versatile and passionate artist, Nicole has touched thousands who have heard her play the piano, listened to her sing, or watched her conduct."</p>
-                  <footer><strong>YaleNews</strong>, Louis Sudler Prize Citation</footer>
-                </blockquote>
-              </div>
-            </div>
-
-            <!-- Extra Bottom Space -->
-            <div class="spacer-bottom"></div>
+        <div class="about-content">
+          <!-- Featured Quote -->
+          <div class="featured-quote">
+            <p>"Nicole's presence in rehearsal rooms has been transformative — her artistry, rigor, and joy have elevated every ensemble she led."</p>
+            <footer>— <strong>YaleNews</strong>, Louis Sudler Prize Citation</footer>
           </div>
 
-          <div class="col-md-4 text-center">
-            <img src="img/vertical.jpg" alt="Nicole Lam" class="img-responsive" style="max-width: 100%; height: auto;">
-          </div>
+          <!-- Biography with Interspersed Image -->
+          <img src="img/vertical.jpg" alt="Nicole Lam" class="about-image-float">
+          
+          <p><strong>Nicole Lam</strong> is a conductor and musical director forging a path that spans symphonic orchestras and musical theatre stages. She is especially drawn to building communities where musicians feel empowered to bring the best versions of themselves, shaped by empathy, clarity, and a shared sense of purpose. Her leadership is widely recognized for its rigor, joy, and transformative impact.</p>
+
+          <p>In May 2025, Nicole was awarded <strong>Yale College's highest performing arts prize, the Louis Sudler Prize</strong>, in recognition of her work as both a conductor and musical leader. She also received the <strong>Wrexham Prize for Music</strong> and the <strong>Joseph Selden Memorial Award</strong> for excellence in the arts and leadership. Nicole studied conducting under <strong>Maestro William Boughton</strong> for three years and was appointed <strong>Assistant Conductor of the Yale Symphony Orchestra</strong> for the 2024–2025 season. In that role, she opened nearly every concert of the season, conducting works such as Carlos Simon's <em>Four Black American Dances</em>, Copland's <em>Fanfare for the Common Man</em>, and Christopher Theofanidis's <em>Rainbow Serpent</em>. She also led the orchestra in the <strong>annual Halloween Show at Woolsey Hall</strong>, selling out in less than one minute and performing for an audience of over 2,600.</p>
+
+          <p>Nicole made her <strong>international conducting debut</strong> in March 2025, leading performances across <strong>North Macedonia and Greece</strong>, including concerts in Skopje, Thessaloniki, Delphi, Giannitsa, Volos, and a culminating performance at the <strong>Athens Megaron Concert Hall</strong>.</p>
+
+          <p>As <strong>Music Director of the Berkeley College Orchestra</strong> (2023–2025), Nicole led the group through a period of remarkable growth, tripling the ensemble's size and dramatically expanding its artistic scope. She conducted four full-length concerts each year, bringing the orchestra back to Yale's mainstage (Woolsey Hall), and programming major works including Tchaikovsky's <em>Symphony No. 5</em>, Beethoven's <em>Symphony No. 5</em> and <em>No. 7</em>, and Dvořák's <em>New World Symphony</em>. Under her leadership, BCO became known not only for its ambitious programming but for its strong sense of community, with Nicole launching <strong>chamber music initiatives</strong> and leading <strong>open conducting workshops</strong> to cultivate emerging musical leadership and collaboration across campus.</p>
+
+          <p>Nicole's music direction credits span musical theatre, opera, and concert work, including <em>Into the Woods</em> (<strong>Yale Dramatic Association 2024 Mainstage</strong>), <em>Natasha, Pierre, and The Great Comet of 1812</em> (directed by Annette Jolles), <em>john & jen</em>, <em>Gypsy</em>, <em>Violet</em>, <em>Pippin</em>, <em>A Chorus Line</em>, <em>West Side Story</em>, and Massenet's <em>Cendrillon</em>. Described as a "versatile and passionate artist," she has reached thousands through her work as a pianist, vocalist, and conductor—earning recognition for the clarity and care she brings to every production. She has collaborated with the <strong>Schwarzman Center</strong>, <strong>Yale Artists Cabaret</strong>, and other producing organizations, and was selected as an <strong>inaugural participant in the David Lee Conducting Program</strong>. Nicole is a member of <strong>MUSE</strong> and <strong>Maestra</strong>. Nicole also previously served as a <strong>staff pianist for Yale's Shen Musical Theatre Curriculum</strong>, playing for masterclasses with Joel Fram, Merri Sugarman, Andrea Burns, Alex Lacamoire, and others.</p>
+
+          <p>As a pianist and vocalist, Nicole studied under <strong>Professor Elizabeth Parisot</strong> for four years, performing annual solo recitals and earning <strong>first prize</strong> in both the <strong>Houston International Music Competition</strong> and the <strong>Steinway Junior Southern California Competition</strong>. As an alto, she has performed with the <strong>Yale Glee Club</strong> and <strong>Yale Schola Cantorum</strong> and sung with multiple church choirs.</p>
+
+          <p>Nicole is the <strong>Founder and Director of Operations</strong> of <em>Love Through Music</em>, a national nonprofit that brings music to underserved communities. The organization has mobilized over 500 student performers and presented more than 50 charity concerts at retirement homes and veterans hospitals. She has also led two service trips to Nepal, delivering donated instruments and supplies to the Shree Narayan Secondary School in Kathmandu.</p>
+
+          <p>Nicole graduated <strong>cum laude</strong> from <strong>Yale University</strong> with <strong>dual distinction in Applied Mathematics and Computer Science</strong>, and completed her <strong>Master's in Computer Science</strong> as part of Yale's selective combined B.S./M.S. program. She conducted machine learning research at the Yale Smart Medicine Lab and interned at the <strong>Yale Investments Office</strong>, where she built a Python-based model comparing marketable and illiquid asset fee structures. She later joined <strong>D. E. Shaw & Co.</strong> as an intern in their Investment Management division.</p>
+
+          <p><strong>Now based in New York City</strong>, Nicole remains deeply committed to a people-centered approach to music making. She looks forward to learning from every musician, mentor, and community she meets, and continuing to create spaces where music brings out the best in all of us.</p>
         </div>
       </div>
     </section>

@@ -36,13 +36,14 @@ Menu
 
 	function init() {
 		initEvents();
-		// Only preserve menu state if user has toggled it before
-		if (sessionStorage.getItem('menuOpen') === 'true' && sessionStorage.getItem('menuVisited') === 'true') {
+		// Only restore menu state if it was explicitly opened
+		if (sessionStorage.getItem('menuOpen') === 'true') {
 			toggleMenu();
+		} else {
+			// Ensure menu starts hidden
+			menuWrap.style.height = '0px';
+			classie.remove(bodyEl, 'show-menu');
 		}
-	
-		// Set visited flag so future page loads can respect toggle
-		sessionStorage.setItem('menuVisited', 'true');
 	}
 
 	function initEvents() {
