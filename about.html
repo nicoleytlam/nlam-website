@@ -96,6 +96,68 @@
           font-size: 16px;
         }
       }
+      /* Footer styles */
+      .enhanced-footer {
+        background: #000;
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      .enhanced-footer a {
+        color: white;
+        transition: color 0.3s ease;
+      }
+
+      .enhanced-footer a:hover {
+        color: #6da999;
+        text-decoration: none;
+      }
+
+      .footer-logo {
+        margin-bottom: 20px;
+      }
+
+      .footer-logo img {
+        height: 80px;
+        width: auto;
+        display: inline-block;
+      }
+
+      .footer-logo img:hover {
+        transform: scale(1.1);
+      }
+
+      .footer-contact {
+        margin-bottom: 20px;
+      }
+
+      .footer-social {
+        margin-bottom: 20px;
+      }
+
+      .social-btn {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border: 1px solid white;
+        border-radius: 50%;
+        margin: 0 10px;
+        transition: all 0.3s ease;
+      }
+
+      .social-btn:hover {
+        background: white;
+        color: black;
+      }
+
+      .footer-bottom {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
     </style>
   </head>
   <body class="light-bg">
@@ -175,21 +237,56 @@
 
           <p><strong>Now based in New York City</strong>, Nicole remains deeply committed to a people-centered approach to music making. She looks forward to learning from every musician, mentor, and community she meets, and continuing to create spaces where music brings out the best in all of us.</p>
 
+          <!-- Resume Section -->
+          <div class="resume-section text-center" style="margin: 60px 0;">
+            <div class="resume-buttons">
+              <a href="resumes/music-direction.pdf" target="_blank" class="btn btn-lg" style="background: #6da999; color: white; margin: 10px; padding: 15px 30px; border-radius: 30px; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; transition: all 0.3s ease;">
+                <i class="fa fa-file-text-o"></i> Music Direction Resume
+              </a>
+              <a href="resumes/full-performance.pdf" target="_blank" class="btn btn-lg" style="background: #ed906a; color: white; margin: 10px; padding: 15px 30px; border-radius: 30px; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; transition: all 0.3s ease;">
+                <i class="fa fa-file-text-o"></i> Full Performance History
+              </a>
+            </div>
+          </div>
+
           <!-- Closing Quote -->
           <div class="closing-quote">
-            <p>"A versatile and passionate artist, Nicole has touched thousands who have heard her play the piano, listened to her sing, or watched her conduct."</p>
-            <!-- <div class="quote-citation">— YaleNews, Louis Sudler Prize Citation</div> -->
+            <p>"Music is not just about the notes on the page—it's about the people who bring them to life, and the communities we build together."</p>
+            <div class="quote-citation">— Nicole Lam</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+    <!-- Enhanced Footer -->
+    <footer class="enhanced-footer">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 text-center">
-            <p>All Rights Reserved. &copy; 2024 Nicole Lam</p>
+          <div class="col-md-12">
+            <div class="footer-logo">
+              <a href="index.html">
+                <img src="img/logo_color.ico" alt="Nicole Lam">
+              </a>
+            </div>
+            <div class="footer-contact">
+              <a href="mailto:nicolelammusic@gmail.com">
+                <i class="fa fa-envelope"></i> nicolelammusic@gmail.com
+              </a>
+            </div>
+            <div class="footer-social">
+              <a href="https://www.linkedin.com/in/nicoleytlam" class="social-btn" target="_blank" aria-label="LinkedIn">
+                <i class="fa fa-linkedin"></i>
+              </a>
+              <a href="https://www.instagram.com/nic.music" class="social-btn" target="_blank" aria-label="Instagram">
+                <i class="fa fa-instagram"></i>
+              </a>
+              <a href="https://www.youtube.com/@nicolelammusic" class="social-btn" target="_blank" aria-label="YouTube">
+                <i class="fa fa-youtube"></i>
+              </a>
+            </div>
+            <div class="footer-bottom">
+              <p>All Rights Reserved. &copy; 2025 Nicole Lam</p>
+            </div>
           </div>
         </div>
       </div>

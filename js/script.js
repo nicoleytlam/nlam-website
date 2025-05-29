@@ -134,3 +134,29 @@ $(window).load(function() {
 
 });
 
+// Function to check if device is mobile
+function isMobile() {
+	return window.innerWidth <= 768;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+	// Get menu elements
+	const menu = document.querySelector('.menu-wrap');
+	const menuLinks = document.querySelectorAll('.menu a');
+	
+	// Handle menu link clicks on mobile
+	menuLinks.forEach(link => {
+		link.addEventListener('click', function(e) {
+			if (isMobile()) {
+				// Close menu by removing 'show-menu' class
+				document.body.classList.remove('show-menu');
+				
+				// Add a small delay to ensure smooth transition
+				setTimeout(() => {
+					menu.style.transform = 'translate3d(-320px,0,0)';
+				}, 100);
+			}
+		});
+	});
+});
+

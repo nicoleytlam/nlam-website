@@ -14,6 +14,19 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="img/logo_color.ico" rel="shortcut icon" type="image/x-icon" />
     <style>
+      body {
+        background-color: #000;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero {
+        flex: 1;
+      }
+
       .header-controls {
         position: fixed;
         top: 20px;
@@ -23,15 +36,131 @@
         align-items: center;
         gap: 20px;
       }
+
+      /* Modern button styles */
+      .explore-button {
+        display: inline-block;
+        padding: 12px 35px;
+        font-size: 1.2em;
+        color: white;
+        background: transparent;
+        border: 2px solid white;
+        border-radius: 25px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        animation: pulse 2s infinite;
+        margin-bottom: 10px;
+        position: relative;
+        top: 100px;
+        font-weight: 500;
+      }
+
+      .explore-button:hover {
+        background: white;
+        color: black;
+        text-decoration: none;
+        animation: none;
+      }
+
+      /* Hide the down arrow but keep its spacing */
+      .scrollto--arrow {
+        opacity: 0;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        }
+      }
+
       @media (max-width: 767px) {
         .header-controls {
           top: 15px;
           left: 15px;
         }
       }
+
+      /* Enhanced Footer Styles */
+      .enhanced-footer {
+        margin-top: 0;
+        background: #000;
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .footer-logo {
+        margin-bottom: 30px;
+      }
+
+      .footer-logo img {
+        height: 80px;
+        width: auto;
+        display: inline-block;
+      }
+
+      .footer-logo img:hover {
+        transform: scale(1.1);
+      }
+
+      .footer-contact {
+        margin-bottom: 30px;
+      }
+
+      .footer-contact a {
+        color: white;
+        font-size: 1.4em;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        letter-spacing: 1px;
+      }
+
+      .footer-contact a:hover {
+        color: #6da999;
+      }
+
+      .footer-social {
+        margin-bottom: 30px;
+      }
+
+      .social-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        border: 2px solid white;
+        border-radius: 50%;
+        margin: 0 12px;
+        font-size: 1.2em;
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .social-btn:hover {
+        background: white;
+        color: black;
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9em;
+        color: #999;
+      }
     </style>
   </head>
-  <body class="light-bg">
+  <body>
     <!-- Preloader -->
     <div id="preloader"></div>
 
@@ -82,7 +211,10 @@
         </div>
         <div class="row">
           <div class="col-md-6 col-md-offset-3 text-center">
-            <a href="#about" class="scrollto wow fadeInUp delay-5s">
+            <a href="about.html" class="explore-button wow fadeInUp delay-5s">
+              EXPLORE
+            </a>
+            <a href="#" class="scrollto" style="opacity: 0;">
               <p>SEE MORE</p>
               <p class="scrollto--arrow"><img src="img/scroll-down.png" alt="scroll down arrow"></p>
             </a>
@@ -91,158 +223,34 @@
       </div>
     </section>
 
-    <!-- About Section -->
-    <section class="intro section-padding color-bg" id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            <h1 class="arrow">About <span>Me</span></h1>
-            <p><strong style="font-size: 1.5em;">Nicole Lam is a music director, orchestral conductor, pianist, and vocalist in her last year of study at Yale University.</strong></p>
-            <p>Currently serving as:</p>
-            <ul style="color: white; list-style-type: none;">
-              <li><i class="fa fa-music"></i> Assistant Conductor of Yale Symphony Orchestra</li>
-              <li><i class="fa fa-conductor"></i> Music Director of Berkeley College Orchestra</li>
-              <li><i class="fa fa-theater"></i> Music Supervisor for Pippin (Yale Theater)</li>
-            </ul>
-            <a href="about.html" class="outline-btn">Read More</a>
-          </div>
-          <div class="col-md-4 text-center">
-            <img src="img/vertical.jpg" alt="Nicole Lam" class="img-responsive" style="max-width: 100%; height: auto;">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Performances -->
-    <section class="features text-center section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h1 class="arrow">Featured Performances</h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="services">
-              <div class="col-md-4 wp2 item">
-                <div class="icon">
-                  <i class="fa fa-music"></i>
-                </div>
-                <h2>Into The Woods</h2>
-                <p>Musical Director - Yale Dramatic Association</p>
-              </div>
-              <div class="col-md-4 wp2 item delay-05s">
-                <div class="icon">
-                  <i class="fa fa-orchestra"></i>
-                </div>
-                <h2>Yale Symphony Orchestra</h2>
-                <p>Assistant Conductor - Spring Concert Series</p>
-              </div>
-              <div class="col-md-4 wp2 item delay-1s">
-                <div class="icon">
-                  <i class="fa fa-theater"></i>
-                </div>
-                <h2>Pippin</h2>
-                <p>Music Supervisor - Yale Theater, Dance, & Performance Studies</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Beyond Section Preview -->
-    <section class="color-bg">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h1 class="arrow">Beyond the Podium</h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3">
-            <div class="beyond-preview">
-              <i class="fa fa-calculator fa-3x"></i>
-              <h3>Tech</h3>
-              <p>Applied Mathematics & Computer Science Projects</p>
-              <a href="beyond-tech.html" class="weight-outline-btn">Learn More</a>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="beyond-preview">
-              <i class="fa fa-graduation-cap fa-3x"></i>
-              <h3>Education</h3>
-              <p>Tutoring & College Consulting</p>
-              <a href="beyond-education.html" class="weight-outline-btn">Learn More</a>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="beyond-preview">
-              <i class="fa fa-paint-brush fa-3x"></i>
-              <h3>Art</h3>
-              <p>Artistic Works & Gallery</p>
-              <a href="beyond-art.html" class="weight-outline-btn">Learn More</a>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="beyond-preview">
-              <i class="fa fa-heart fa-3x"></i>
-              <h3>Love Through Music</h3>
-              <p>Non-Profit Organization</p>
-              <a href="beyond-ltm.html" class="weight-outline-btn">Learn More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Latest News Preview -->
-    <section class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h1 class="arrow">Latest News</h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="news-item">
-              <img src="img/news/news1.jpg" alt="News 1">
-              <h3>Spring Concert Series Announcement</h3>
-              <p class="date">March 15, 2024</p>
-              <p>Join us for an exciting series of spring concerts featuring works by Beethoven, Brahms, and more.</p>
-              <a href="news.html" class="weight-outline-btn">Read More</a>
-            </div>
-          </div>
-          <!-- Add more news items as needed -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- Enhanced Footer -->
     <footer class="enhanced-footer">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="footer-logo">
-              <img src="img/logo_color.ico" alt="Nicole Lam">
+              <a href="index.html">
+                <img src="img/logo_color.ico" alt="Nicole Lam">
+              </a>
             </div>
             <div class="footer-contact">
-              <p><i class="fa fa-envelope"></i> <a href="mailto:nicolelammusic@gmail.com">nicolelammusic@gmail.com</a></p>
+              <a href="mailto:nicolelammusic@gmail.com">
+                <i class="fa fa-envelope"></i> nicolelammusic@gmail.com
+              </a>
             </div>
             <div class="footer-social">
-              <a href="https://www.linkedin.com/in/nicoleytlam" class="social-btn" target="_blank">
+              <a href="https://www.linkedin.com/in/nicoleytlam" class="social-btn" target="_blank" aria-label="LinkedIn">
                 <i class="fa fa-linkedin"></i>
               </a>
-              <a href="https://www.instagram.com/nic.music" class="social-btn" target="_blank">
+              <a href="https://www.instagram.com/nic.music" class="social-btn" target="_blank" aria-label="Instagram">
                 <i class="fa fa-instagram"></i>
               </a>
-              <a href="https://www.youtube.com/@nicolelammusic" class="social-btn" target="_blank">
+              <a href="https://www.youtube.com/@nicolelammusic" class="social-btn" target="_blank" aria-label="YouTube">
                 <i class="fa fa-youtube"></i>
               </a>
             </div>
             <div class="footer-bottom">
-              <p>All Rights Reserved. &copy; 2024 Nicole Lam</p>
+              <p>All Rights Reserved. &copy; 2025 Nicole Lam</p>
             </div>
           </div>
         </div>

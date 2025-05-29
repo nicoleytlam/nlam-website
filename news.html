@@ -117,6 +117,75 @@
         color: #0056b3;
         text-decoration: none;
       }
+      /* Footer styles */
+      .enhanced-footer {
+        background: #000;
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .footer-logo {
+        margin-bottom: 30px;
+      }
+
+      .footer-logo img {
+        height: 80px;
+        width: auto;
+        display: inline-block;
+      }
+
+      .footer-logo img:hover {
+        transform: scale(1.1);
+      }
+
+      .footer-contact {
+        margin-bottom: 30px;
+      }
+
+      .footer-contact a {
+        color: white;
+        font-size: 1.4em;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        letter-spacing: 1px;
+      }
+
+      .footer-contact a:hover {
+        color: #6da999;
+      }
+
+      .footer-social {
+        margin-bottom: 30px;
+      }
+
+      .social-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        border: 2px solid white;
+        border-radius: 50%;
+        margin: 0 12px;
+        font-size: 1.2em;
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .social-btn:hover {
+        background: white;
+        color: black;
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9em;
+        color: #999;
+      }
     </style>
   </head>
   <body class="light-bg">
@@ -165,251 +234,272 @@
 
     <!-- News Section -->
     <section class="section-padding" id="news">
-      <div class="container">
-        <!-- Filters -->
-        <div class="text-center news-filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="performances">Performances</button>
-          <button class="filter-btn" data-filter="awards">Awards & Recognition</button>
-          <button class="filter-btn" data-filter="features">Features & Profiles</button>
+      <!-- Filters -->
+      <div class="text-center news-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="performances">Performances</button>
+        <button class="filter-btn" data-filter="awards">Awards & Recognition</button>
+        <button class="filter-btn" data-filter="features">Features & Profiles</button>
+      </div>
+
+      <div class="news-grid">
+        <div class="news-grid-sizer"></div>
+        
+        <!-- Sudler Citation - May 18, 2025 -->
+        <div class="news-grid-item wow fadeInUp" data-category="awards">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/news/sudler.jpg" alt="Sudler Prize" class="img-fluid">
+            </div>
+            <div class="news-content">
+              <span class="news-tag">Award</span>
+              <h3>Awarded Yale's Highest Performing Arts Prize: The Louis Sudler Prize</h3>
+              <p class="news-date">May 18, 2025</p>
+              <p class="news-quote">"Nicole's presence in rehearsal rooms has been transformative — her artistry, rigor, and joy has elevated every ensemble she led."</p>
+              <a href="https://news.yale.edu/2025/05/18/distinguished-seniors-recognized-yale-colleges-top-prizes" target="_blank" class="read-more">Read More →</a>
+            </div>
+          </div>
         </div>
 
-        <div class="news-grid">
-          <div class="news-grid-sizer"></div>
-          
-          <!-- Sudler Citation - May 18, 2025 -->
-          <div class="news-grid-item wow fadeInUp" data-category="awards">
-            <div class="news-card">
-              <div class="news-image">
-                <img src="img/news/sudler.jpg" alt="Sudler Prize" class="img-fluid">
-              </div>
-              <div class="news-content">
-                <span class="news-tag">Award</span>
-                <h3>Awarded Yale's Highest Performing Arts Prize: The Louis Sudler Prize</h3>
-                <p class="news-date">May 18, 2025</p>
-                <p class="news-quote">"Nicole's presence in rehearsal rooms has been transformative — her artistry, rigor, and joy has elevated every ensemble she led."</p>
-                <a href="https://news.yale.edu/2025/05/18/distinguished-seniors-recognized-yale-colleges-top-prizes" class="read-more">Read More →</a>
-              </div>
+        <!-- Yale Graduation Profile - May 12, 2025 -->
+        <div class="news-grid-item wow fadeInUp" data-delay="0.2s" data-category="features">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/news/graduation.jpg" alt="Yale Graduation" class="img-fluid">
+            </div>
+            <div class="news-content">
+              <span class="news-tag">Profile</span>
+              <h3>Self-Discovery Through Mathematics and Music</h3>
+              <p class="news-date">May 12, 2025</p>
+              <p>A deep dive into Nicole's journey combining mathematics and music at Yale.</p>
+              <a href="https://news.yale.edu/2025/05/12/self-discovery-through-mathematics-and-music" target="_blank" class="read-more">Read More →</a>
             </div>
           </div>
+        </div>
 
-          <!-- Yale Graduation Profile - May 12, 2025 -->
-          <div class="news-grid-item wow fadeInUp" data-delay="0.2s" data-category="features">
-            <div class="news-card">
-              <div class="news-image">
-                <img src="img/news/graduation.jpg" alt="Yale Graduation" class="img-fluid">
-              </div>
-              <div class="news-content">
-                <span class="news-tag">Profile</span>
-                <h3>Self-Discovery Through Mathematics and Music</h3>
-                <p class="news-date">May 12, 2025</p>
-                <p>A deep dive into Nicole's journey combining mathematics and music at Yale.</p>
-                <a href="https://news.yale.edu/2025/05/12/self-discovery-through-mathematics-and-music" class="read-more">Read More →</a>
-              </div>
+        <!-- International Conducting Debut - March 20, 2025 -->
+        <div class="news-grid-item wow fadeInUp" data-delay="0.1s" data-category="performances">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/news/greece.jpg" alt="International Conducting Debut" class="img-fluid">
+            </div>
+            <div class="news-content">
+              <span class="news-tag">Performance</span>
+              <h3>International Conducting Debut in Greece</h3>
+              <p class="news-date">March 20, 2025</p>
+              <p>Nicole made her international conducting debut at the Athens Megaron Concert Hall in addition to concert halls in Skopje, Thessaloniki, Delphi, Volos, and Giannitsa.</p>
+              <a href="https://youtu.be/NCEXlF7jvb4?si=dgRg6PzLOdK2q26E" target="_blank" class="read-more">Watch Performance →</a>
             </div>
           </div>
+        </div>
 
-          <!-- International Conducting Debut - March 20, 2025 -->
-          <div class="news-grid-item wow fadeInUp" data-delay="0.1s" data-category="performances">
-            <div class="news-card">
-              <div class="news-image">
-                <img src="img/news/greece.jpg" alt="International Conducting Debut" class="img-fluid">
-              </div>
-              <div class="news-content">
-                <span class="news-tag">Performance</span>
-                <h3>International Conducting Debut in Greece</h3>
-                <p class="news-date">March 20, 2025</p>
-                <p>Nicole made her international conducting debut at the Athens Megaron Concert Hall in addition to concert halls in Skopje, Thessaloniki, Delphi, Volos, and Giannitsa.</p>
-                <a href="https://youtu.be/NCEXlF7jvb4?si=dgRg6PzLOdK2q26E" class="read-more">Watch Performance →</a>
-              </div>
+        <!-- Yale Concert Band Debut - February 14, 2025 -->
+        <div class="news-grid-item wow fadeInUp" data-delay="0.2s" data-category="performances">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/news/concert_band.jpg" alt="Yale Concert Band Performance" class="img-fluid">
+            </div>
+            <div class="news-content">
+              <span class="news-tag">Performance</span>
+              <h3>Stepping in for Yale Concert Band</h3>
+              <p class="news-date">February 14, 2025</p>
+              <p>With just 48 hours notice, Nicole successfully conducted the Yale Concert Band in performances of Percy Grainger's "Handel in the Strand" and Edward Elgar's "Enigma Variations" arr. Slocum.</p>
             </div>
           </div>
+        </div>
 
-          <!-- Yale Concert Band Debut - February 14, 2025 -->
-          <div class="news-grid-item wow fadeInUp" data-delay="0.2s" data-category="performances">
-            <div class="news-card">
-              <div class="news-image">
-                <img src="img/news/concert_band.jpg" alt="Yale Concert Band Performance" class="img-fluid">
-              </div>
-              <div class="news-content">
-                <span class="news-tag">Performance</span>
-                <h3>Stepping in for Yale Concert Band</h3>
-                <p class="news-date">February 14, 2025</p>
-                <p>With just 48 hours notice, Nicole successfully conducted the Yale Concert Band in performances of Percy Grainger's "Handel in the Strand" and Edward Elgar's "Enigma Variations" arr. Slocum.</p>
-              </div>
+        <!-- West Side Story - April 19, 2024 -->
+        <div class="news-grid-item wow fadeInUp" data-category="performances">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/news/westside.jpg" alt="West Side Story" class="img-fluid">
+            </div>
+            <div class="news-content">
+              <span class="news-tag">Performance</span>
+              <h3>West Side Story Premieres</h3>
+              <p class="news-date">April 19, 2024</p>
+              <p class="news-quote">"The energy during dance scenes is palpable, invigorated by the live 13-piece orchestra directed by Nicole Lam '25."</p>
+              <a href="https://yaledailynews.com/blog/2024/04/19/west-side-story-premieres-this-weekend/" target="_blank" class="read-more">Read More →</a>
             </div>
           </div>
+        </div>
 
-          <!-- West Side Story - April 19, 2024 -->
-          <div class="news-grid-item wow fadeInUp" data-category="performances">
-            <div class="news-card">
-              <div class="news-image">
-                <img src="img/news/westside.jpg" alt="West Side Story" class="img-fluid">
-              </div>
-              <div class="news-content">
-                <span class="news-tag">Performance</span>
-                <h3>West Side Story Premieres</h3>
-                <p class="news-date">April 19, 2024</p>
-                <p class="news-quote">"The energy during dance scenes is palpable, invigorated by the live 13-piece orchestra directed by Nicole Lam '25."</p>
-                <a href="https://yaledailynews.com/blog/2024/04/19/west-side-story-premieres-this-weekend/" class="read-more">Read More →</a>
-              </div>
+        <!-- Junior Honors - May 3, 2024 -->
+        <div class="news-grid-item wow fadeInUp" data-delay="0.3s" data-category="awards">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/news/junior.jpg" alt="Junior Honors" class="img-fluid">
+            </div>
+            <div class="news-content">
+              <span class="news-tag">Recognition</span>
+              <h3>Junior Honored For Leadership, Scholarship, and Campus Contributions</h3>
+              <p class="news-date">May 3, 2024</p>
+              <p class="news-quote">Nicole is awarded the Joseph Selden Memorial Award, stating that "she enjoys mentoring and leading others, encouraging her peers to get involved with the arts at Yale, and inspiring her fellow musicians to do their best work."</p>
+              <a href="https://news.yale.edu/2024/05/03/juniors-honored-leadership-scholarship-and-campus-contributions" target="_blank" class="read-more">Read More →</a>
             </div>
           </div>
+        </div>
 
-          <!-- Junior Honors - May 3, 2024 -->
-          <div class="news-grid-item wow fadeInUp" data-delay="0.3s" data-category="awards">
-            <div class="news-card">
-              <div class="news-image">
-                <img src="img/news/junior.jpg" alt="Junior Honors" class="img-fluid">
-              </div>
-              <div class="news-content">
-                <span class="news-tag">Recognition</span>
-                <h3>Junior Honored For Leadership, Scholarship, and Campus Contributions</h3>
-                <p class="news-date">May 3, 2024</p>
-                <p class="news-quote">Nicole is awarded the Joseph Selden Memorial Award, stating that "she enjoys mentoring and leading others, encouraging her peers to get involved with the arts at Yale, and inspiring her fellow musicians to do their best work."</p>
-                <a href="https://news.yale.edu/2024/05/03/juniors-honored-leadership-scholarship-and-campus-contributions" class="read-more">Read More →</a>
-              </div>
+        <!-- Into The Woods - November 19, 2024 -->
+        <div class="news-grid-item wow fadeInUp" data-delay="0.2s" data-category="performances">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/news/woods.jpg" alt="Into The Woods" class="img-fluid">
+            </div>
+            <div class="news-content">
+              <span class="news-tag">Performance</span>
+              <h3>Into The Woods: A Stunning Success</h3>
+              <p class="news-date">November 19, 2024</p>
+              <p class="news-quote">"Sonically, the show blew audiences away. The pit orchestra ran under the masterful guidance of Nicole Lam."</p>
+              <a href="https://yaledailynews.com/blog/2024/11/19/review-dramats-into-the-woods-is-a-quirky-stunning-rendition-of-sondheims-classic/" target="_blank" class="read-more">Read More →</a>
             </div>
           </div>
+        </div>
 
-          <!-- Into The Woods - November 19, 2024 -->
-          <div class="news-grid-item wow fadeInUp" data-delay="0.2s" data-category="performances">
-            <div class="news-card">
-              <div class="news-image">
-                <img src="img/news/woods.jpg" alt="Into The Woods" class="img-fluid">
-              </div>
-              <div class="news-content">
-                <span class="news-tag">Performance</span>
-                <h3>Into The Woods: A Stunning Success</h3>
-                <p class="news-date">November 19, 2024</p>
-                <p class="news-quote">"Sonically, the show blew audiences away. The pit orchestra ran under the masterful guidance of Nicole Lam."</p>
-                <a href="https://yaledailynews.com/blog/2024/11/19/review-dramats-into-the-woods-is-a-quirky-stunning-rendition-of-sondheims-classic/" class="read-more">Read More →</a>
-              </div>
+        <!-- YSO Halloween Concert - November 3, 2024 -->
+        <div class="news-grid-item wow fadeInUp" data-delay="0.3s" data-category="performances">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/news/halloween.jpg" alt="YSO Halloween" class="img-fluid">
+            </div>
+            <div class="news-content">
+              <span class="news-tag">Performance</span>
+              <h3>Yale Symphony Orchestra Halloween Concert</h3>
+              <p class="news-date">November 3, 2024</p>
+              <p>A spectacular performance featuring Laufey and human waves at the annual YSO Halloween show.</p>
+              <a href="https://yaledailynews.com/blog/2024/11/03/review-laufey-human-waves-social-clout-yale-symphony-orchestras-halloween-concert-delivers-yet-again/" target="_blank" class="read-more">Read More →</a>
             </div>
           </div>
+        </div>
 
-          <!-- YSO Halloween Concert - November 3, 2024 -->
-          <div class="news-grid-item wow fadeInUp" data-delay="0.3s" data-category="performances">
-            <div class="news-card">
-              <div class="news-image">
-                <img src="img/news/halloween.jpg" alt="YSO Halloween" class="img-fluid">
-              </div>
-              <div class="news-content">
-                <span class="news-tag">Performance</span>
-                <h3>Yale Symphony Orchestra Halloween Concert</h3>
-                <p class="news-date">November 3, 2024</p>
-                <p>A spectacular performance featuring Laufey and human waves at the annual YSO Halloween show.</p>
-                <a href="https://yaledailynews.com/blog/2024/11/03/review-laufey-human-waves-social-clout-yale-symphony-orchestras-halloween-concert-delivers-yet-again/" class="read-more">Read More →</a>
-              </div>
+        <!-- YSO Assistant Conductor -->
+        <div class="news-grid-item wow fadeInUp" data-category="features">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/news/yso-conductor.jpg" alt="YSO Assistant Conductor" class="img-fluid">
+            </div>
+            <div class="news-content">
+              <span class="news-tag">Appointment</span>
+              <h3>Appointed YSO Assistant Conductor</h3>
+              <p class="news-date">April 22, 2024</p>
+              <p>Nicole takes on the role of Assistant Conductor for the Yale Symphony Orchestra.</p>
+              <a href="https://yso.yalecollege.yale.edu/about-us/assistant-conductor" target="_blank" class="read-more">Read More →</a>
             </div>
           </div>
+        </div>
 
-          <!-- YSO Assistant Conductor -->
-          <div class="news-grid-item wow fadeInUp" data-category="features">
-            <div class="news-card">
-              <div class="news-image">
-                <img src="img/news/yso-conductor.jpg" alt="YSO Assistant Conductor" class="img-fluid">
-              </div>
-              <div class="news-content">
-                <span class="news-tag">Appointment</span>
-                <h3>Appointed YSO Assistant Conductor</h3>
-                <p class="news-date">April 22, 2024</p>
-                <p>Nicole takes on the role of Assistant Conductor for the Yale Symphony Orchestra.</p>
-                <a href="https://yso.yalecollege.yale.edu/about-us/assistant-conductor" class="read-more">Read More →</a>
-              </div>
+        <!-- Great Comet -->
+        <div class="news-grid-item wow fadeInUp" data-category="performances">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/news/comet.jpg" alt="Great Comet" class="img-fluid">
+            </div>
+            <div class="news-content">
+              <span class="news-tag">Performance</span>
+              <h3>Great Comet Makes Long-Awaited Debut</h3>
+              <p class="news-date">December 8, 2023</p>
+              <p class="news-quote">"Musical director Nicole Lam, legendary among singers at Yale for her talent as a vocal coach..."</p>
+              <a href="https://yaledailynews.com/blog/2023/12/08/natasha-pierre-the-great-comet-of-1812-makes-long-awaited-debut/" target="_blank" class="read-more">Read More →</a>
             </div>
           </div>
+        </div>
 
-          <!-- Great Comet -->
-          <div class="news-grid-item wow fadeInUp" data-category="performances">
-            <div class="news-card">
-              <div class="news-image">
-                <img src="img/news/comet.jpg" alt="Great Comet" class="img-fluid">
-              </div>
-              <div class="news-content">
-                <span class="news-tag">Performance</span>
-                <h3>Great Comet Makes Long-Awaited Debut</h3>
-                <p class="news-date">December 8, 2023</p>
-                <p class="news-quote">"Musical director Nicole Lam, legendary among singers at Yale for her talent as a vocal coach..."</p>
-                <a href="https://yaledailynews.com/blog/2023/12/08/natasha-pierre-the-great-comet-of-1812-makes-long-awaited-debut/" class="read-more">Read More →</a>
-              </div>
+        <!-- BCO Serenade -->
+        <div class="news-grid-item wow fadeInUp" data-category="performances">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/news/serenade.jpg" alt="Great Comet" class="img-fluid">
+            </div>
+            <div class="news-content">
+              <span class="news-tag">Performance</span>
+              <h3>Berkeley College Orchestra: Serenade of Memory and Destiny</h3>
+              <p class="news-date">November 14, 2023</p>
+              <p>A moving performance exploring themes of memory and destiny through masterful orchestration.</p>
+              <a href="https://yaledailynews.com/blog/2023/11/14/berkeley-college-orchestras-serenade-of-memory-and-destiny/" target="_blank" class="read-more">Read More →</a>
             </div>
           </div>
+        </div>
 
-          <!-- BCO Serenade -->
-          <div class="news-grid-item wow fadeInUp" data-category="performances">
-            <div class="news-card">
-              <div class="news-image">
-                <img src="img/news/serenade.jpg" alt="Great Comet" class="img-fluid">
-              </div>
-              <div class="news-content">
-                <span class="news-tag">Performance</span>
-                <h3>Berkeley College Orchestra: Serenade of Memory and Destiny</h3>
-                <p class="news-date">November 14, 2023</p>
-                <p>A moving performance exploring themes of memory and destiny through masterful orchestration.</p>
-                <a href="https://yaledailynews.com/blog/2023/11/14/berkeley-college-orchestras-serenade-of-memory-and-destiny/" class="read-more">Read More →</a>
-              </div>
+        <!-- BCO Con Brio -->
+        <div class="news-grid-item wow fadeInUp" data-category="performances">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/news/con_brio.jpg" alt="Great Comet" class="img-fluid">
+            </div>
+            <div class="news-content">
+              <span class="news-tag">Performance</span>
+              <h3>BCO Launches 48th Season with Con Brio</h3>
+              <p class="news-date">October 10, 2023</p>
+              <p class="news-quote">An attendee emphasized that while "not familiar with the technical elements of orchestra shows," the performance "blew his mind."</p>
+              <a href="https://yaledailynews.com/blog/2023/10/10/berkeley-college-orchestra-launches-48th-season-with-con-brio-performance/" target="_blank" class="read-more">Read More →</a>
             </div>
           </div>
+        </div>
 
-          <!-- BCO Con Brio -->
-          <div class="news-grid-item wow fadeInUp" data-category="performances">
-            <div class="news-card">
-              <div class="news-image">
-                <img src="img/news/con_brio.jpg" alt="Great Comet" class="img-fluid">
-              </div>
-              <div class="news-content">
-                <span class="news-tag">Performance</span>
-                <h3>BCO Launches 48th Season with Con Brio</h3>
-                <p class="news-date">October 10, 2023</p>
-                <p class="news-quote">An attendee emphasized that while "not familiar with the technical elements of orchestra shows," the performance "blew his mind."</p>
-                <a href="https://yaledailynews.com/blog/2023/10/10/berkeley-college-orchestra-launches-48th-season-with-con-brio-performance/" class="read-more">Read More →</a>
-              </div>
+
+        <!-- Pasadena Now Profile -->
+        <div class="news-grid-item wow fadeInUp" data-category="features">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/news/pasadena.jpg" alt="Pasadena Profile" class="img-fluid">
+            </div>
+            <div class="news-content">
+              <span class="news-tag">Profile</span>
+              <h3>Pasadena Now: A Musical Journey</h3>
+              <p class="news-date">2021</p>
+              <p>Profile featuring Nicole's journey as a concert pianist and mezzo-soprano opera singer.</p>
+              <a href="https://www.pasadenanow.com/pasadenaschools/nicole-lam-a-concert-pianist-and-a-mezzo-soprano-opera-singer-and-a-clairbourn-graduate/" target="_blank" class="read-more">Read More →</a>
             </div>
           </div>
+        </div>
 
-
-          <!-- Pasadena Now Profile -->
-          <div class="news-grid-item wow fadeInUp" data-category="features">
-            <div class="news-card">
-              <div class="news-image">
-                <img src="img/news/pasadena.jpg" alt="Pasadena Profile" class="img-fluid">
-              </div>
-              <div class="news-content">
-                <span class="news-tag">Profile</span>
-                <h3>Pasadena Now: A Musical Journey</h3>
-                <p class="news-date">2021</p>
-                <p>Profile featuring Nicole's journey as a concert pianist and mezzo-soprano opera singer.</p>
-                <a href="https://www.pasadenanow.com/pasadenaschools/nicole-lam-a-concert-pianist-and-a-mezzo-soprano-opera-singer-and-a-clairbourn-graduate/" class="read-more">Read More →</a>
-              </div>
+        <!-- CSF Award -->
+        <div class="news-grid-item wow fadeInUp" data-category="awards">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/news/csf.jpg" alt="CSF Profile" class="img-fluid">
             </div>
-          </div>
-
-          <!-- CSF Award -->
-          <div class="news-grid-item wow fadeInUp" data-category="awards">
-            <div class="news-card">
-              <div class="news-image">
-                <img src="img/news/csf.jpg" alt="CSF Profile" class="img-fluid">
-              </div>
-              <div class="news-content">
-                <span class="news-tag">Award</span>
-                <h3>CSF Seymour Award Recipient</h3>
-                <p class="news-date">2020-2021</p>
-                <p>Recognized as the South Central Region recipient of the prestigious CSF Seymour Award.</p>
-                <a href="https://csf-cjsf.org/nicole-lam-seymour-award-2020-2021-south-central-region-recipient/" class="read-more">Read More →</a>
-              </div>
+            <div class="news-content">
+              <span class="news-tag">Award</span>
+              <h3>CSF Seymour Award Recipient</h3>
+              <p class="news-date">2020-2021</p>
+              <p>Recognized as the South Central Region recipient of the prestigious CSF Seymour Award.</p>
+              <a href="https://csf-cjsf.org/nicole-lam-seymour-award-2020-2021-south-central-region-recipient/" target="_blank" class="read-more">Read More →</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+    <!-- Enhanced Footer -->
+    <footer class="enhanced-footer">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 text-center">
-            <p>All Rights Reserved. &copy; 2024 Nicole Lam</p>
+          <div class="col-md-12">
+            <div class="footer-logo">
+              <a href="index.html">
+                <img src="img/logo_color.ico" alt="Nicole Lam">
+              </a>
+            </div>
+            <div class="footer-contact">
+              <a href="mailto:nicolelammusic@gmail.com">
+                <i class="fa fa-envelope"></i> nicolelammusic@gmail.com
+              </a>
+            </div>
+            <div class="footer-social">
+              <a href="https://www.linkedin.com/in/nicoleytlam" class="social-btn" target="_blank" aria-label="LinkedIn">
+                <i class="fa fa-linkedin"></i>
+              </a>
+              <a href="https://www.instagram.com/nic.music" class="social-btn" target="_blank" aria-label="Instagram">
+                <i class="fa fa-instagram"></i>
+              </a>
+              <a href="https://www.youtube.com/@nicolelammusic" class="social-btn" target="_blank" aria-label="YouTube">
+                <i class="fa fa-youtube"></i>
+              </a>
+            </div>
+            <div class="footer-bottom">
+              <p>All Rights Reserved. &copy; 2025 Nicole Lam</p>
+            </div>
           </div>
         </div>
       </div>

@@ -437,6 +437,76 @@
           margin-bottom: 30px;
         }
       }
+
+      /* Footer styles */
+      .enhanced-footer {
+        background: #000;
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .footer-logo {
+        margin-bottom: 30px;
+      }
+
+      .footer-logo img {
+        height: 80px;
+        width: auto;
+        display: inline-block;
+      }
+
+      .footer-logo img:hover {
+        transform: scale(1.1);
+      }
+
+      .footer-contact {
+        margin-bottom: 30px;
+      }
+
+      .footer-contact a {
+        color: white;
+        font-size: 1.4em;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        letter-spacing: 1px;
+      }
+
+      .footer-contact a:hover {
+        color: #6da999;
+      }
+
+      .footer-social {
+        margin-bottom: 30px;
+      }
+
+      .social-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        border: 2px solid white;
+        border-radius: 50%;
+        margin: 0 12px;
+        font-size: 1.2em;
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .social-btn:hover {
+        background: white;
+        color: black;
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9em;
+        color: #999;
+      }
     </style>
   </head>
   <body class="light-bg">
@@ -477,7 +547,7 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2 text-center">
             <h1 class="animated fadeInDown">Performance Videos</h1>
-            <h3>Orchestral Conducting, Musical Directing, Piano, and Vocal Performances</h3>
+            <h3>Conducting, Piano, and Other Performances</h3>
           </div>
         </div>
       </div>
@@ -508,7 +578,7 @@
               <div class="video-wrapper">
                 <iframe width="560" 
                         height="315" 
-                        src="https://youtu.be/MtPofTIUASk" 
+                        src="https://youtu.be/MtPofTIUASk?si=N3JwZ5wYHmLlglnA" 
                         title="Musical Direction" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -579,7 +649,7 @@
           <div class="col-md-4 wow fadeInUp performance-item musical-direction">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://youtu.be/iicUgA_Xgc4" 
+                <iframe src="https://youtu.be/iicUgA_Xgc4?si=TYqjzOTPwFfrK6UH" 
                         title="Gypsy Overture" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -647,7 +717,7 @@
           <div class="col-md-4 wow fadeInUp performance-item musical-direction">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://youtu.be/KiI9b37TG-s" 
+                <iframe src="https://youtu.be/KiI9b37TG-s?si=bDfVlQ606mYBlYBC" 
                         title="West Side Story Overture" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -916,11 +986,34 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="enhanced-footer">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 text-center">
-            <p>All Rights Reserved. &copy; 2025 Nicole Lam</p>
+          <div class="col-md-12">
+            <div class="footer-logo">
+              <a href="index.html">
+                <img src="img/logo_color.ico" alt="Nicole Lam">
+              </a>
+            </div>
+            <div class="footer-contact">
+              <a href="mailto:nicolelammusic@gmail.com">
+                <i class="fa fa-envelope"></i> nicolelammusic@gmail.com
+              </a>
+            </div>
+            <div class="footer-social">
+              <a href="https://www.linkedin.com/in/nicoleytlam" class="social-btn" target="_blank" aria-label="LinkedIn">
+                <i class="fa fa-linkedin"></i>
+              </a>
+              <a href="https://www.instagram.com/nic.music" class="social-btn" target="_blank" aria-label="Instagram">
+                <i class="fa fa-instagram"></i>
+              </a>
+              <a href="https://www.youtube.com/@nicolelammusic" class="social-btn" target="_blank" aria-label="YouTube">
+                <i class="fa fa-youtube"></i>
+              </a>
+            </div>
+            <div class="footer-bottom">
+              <p>All Rights Reserved. &copy; 2025 Nicole Lam</p>
+            </div>
           </div>
         </div>
       </div>

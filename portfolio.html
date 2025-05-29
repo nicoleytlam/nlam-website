@@ -13,6 +13,154 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="img/logo_color.ico" rel="shortcut icon" type="image/x-icon" />
+    <style>
+      /* Footer styles */
+      .enhanced-footer {
+        background: #000;
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      .enhanced-footer a {
+        color: white;
+        transition: color 0.3s ease;
+      }
+
+      .enhanced-footer a:hover {
+        color: #6da999;
+        text-decoration: none;
+      }
+
+      .footer-logo {
+        margin-bottom: 20px;
+      }
+
+      .footer-logo img {
+        height: 40px;
+        width: auto;
+        filter: brightness(0) invert(1);
+        display: inline-block;
+      }
+
+      .footer-contact {
+        margin-bottom: 20px;
+      }
+
+      .footer-social {
+        margin-bottom: 20px;
+      }
+
+      .social-btn {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border: 1px solid white;
+        border-radius: 50%;
+        margin: 0 10px;
+        transition: all 0.3s ease;
+      }
+
+      .social-btn:hover {
+        background: white;
+        color: black;
+      }
+
+      .footer-bottom {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Existing styles */
+      .portfolio-item {
+        margin-bottom: 30px;
+      }
+      .portfolio-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+      .portfolio-item h3 {
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+      .portfolio-item p {
+        color: #999;
+      }
+
+      /* Enhanced Footer Styles */
+      .enhanced-footer {
+        background: #000;
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .footer-logo {
+        margin-bottom: 30px;
+      }
+
+      .footer-logo img {
+        height: 80px;
+        width: auto;
+        display: inline-block;
+      }
+
+      .footer-logo img:hover {
+        transform: scale(1.1);
+      }
+
+      .footer-contact {
+        margin-bottom: 30px;
+      }
+
+      .footer-contact a {
+        color: white;
+        font-size: 1.4em;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        letter-spacing: 1px;
+      }
+
+      .footer-contact a:hover {
+        color: #6da999;
+      }
+
+      .footer-social {
+        margin-bottom: 30px;
+      }
+
+      .social-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        border: 2px solid white;
+        border-radius: 50%;
+        margin: 0 12px;
+        font-size: 1.2em;
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .social-btn:hover {
+        background: white;
+        color: black;
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9em;
+        color: #999;
+      }
+    </style>
   </head>
   <body class="light-bg">
     <!-- Preloader -->
@@ -80,12 +228,35 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+    <!-- Enhanced Footer -->
+    <footer class="enhanced-footer">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 text-center">
-            <p>All Rights Reserved. &copy; 2024 Nicole Lam</p>
+          <div class="col-md-12">
+            <div class="footer-logo">
+              <a href="index.html">
+                <img src="img/logo_color.ico" alt="Nicole Lam">
+              </a>
+            </div>
+            <div class="footer-contact">
+              <a href="mailto:nicolelammusic@gmail.com">
+                <i class="fa fa-envelope"></i> nicolelammusic@gmail.com
+              </a>
+            </div>
+            <div class="footer-social">
+              <a href="https://www.linkedin.com/in/nicoleytlam" class="social-btn" target="_blank" aria-label="LinkedIn">
+                <i class="fa fa-linkedin"></i>
+              </a>
+              <a href="https://www.instagram.com/nic.music" class="social-btn" target="_blank" aria-label="Instagram">
+                <i class="fa fa-instagram"></i>
+              </a>
+              <a href="https://www.youtube.com/@nicolelammusic" class="social-btn" target="_blank" aria-label="YouTube">
+                <i class="fa fa-youtube"></i>
+              </a>
+            </div>
+            <div class="footer-bottom">
+              <p>All Rights Reserved. &copy; 2025 Nicole Lam</p>
+            </div>
           </div>
         </div>
       </div>
