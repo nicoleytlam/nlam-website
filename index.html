@@ -12,7 +12,24 @@
     <link href="assets/flexslider/flexslider.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
-    <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="img/logo_color.ico" rel="shortcut icon" type="image/x-icon" />
+    <style>
+      .header-controls {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      @media (max-width: 767px) {
+        .header-controls {
+          top: 15px;
+          left: 15px;
+        }
+      }
+    </style>
   </head>
   <body class="light-bg">
     <!-- Preloader -->
@@ -22,6 +39,14 @@
     <header>
       <div class="container-fluid">
         <div class="row">
+          <div class="header-controls">
+            <div class="site-logo">
+              <a href="index.html">
+                <img src="img/logo_color.ico" alt="Nicole Lam">
+              </a>
+            </div>
+            <button class="menu-button" id="open-button"></button>
+          </div>
           <div class="menu-wrap">
             <nav class="menu">
               <div class="icon-list">
@@ -34,7 +59,6 @@
               </div>
             </nav>
           </div>
-          <button class="menu-button" id="open-button"></button>
         </div>
       </div>
     </header>
@@ -196,11 +220,30 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="enhanced-footer">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 text-center">
-            <p>All Rights Reserved. &copy; 2024 Nicole Lam</p>
+          <div class="col-md-12">
+            <div class="footer-logo">
+              <img src="img/logo_color.ico" alt="Nicole Lam">
+            </div>
+            <div class="footer-contact">
+              <p><i class="fa fa-envelope"></i> <a href="mailto:nicolelammusic@gmail.com">nicolelammusic@gmail.com</a></p>
+            </div>
+            <div class="footer-social">
+              <a href="https://www.linkedin.com/in/nicoleytlam" class="social-btn" target="_blank">
+                <i class="fa fa-linkedin"></i>
+              </a>
+              <a href="https://www.instagram.com/nic.music" class="social-btn" target="_blank">
+                <i class="fa fa-instagram"></i>
+              </a>
+              <a href="https://www.youtube.com/@nicolelammusic" class="social-btn" target="_blank">
+                <i class="fa fa-youtube"></i>
+              </a>
+            </div>
+            <div class="footer-bottom">
+              <p>All Rights Reserved. &copy; 2024 Nicole Lam</p>
+            </div>
           </div>
         </div>
       </div>

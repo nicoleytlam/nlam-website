@@ -35,6 +35,12 @@ $(document).ready(function() {
 		offset: '75%'
 	});
 
+	// Close menu when clicking menu links
+	$('.icon-list a').on('click', function() {
+		$('body').removeClass('show-menu');
+		return true;
+	});
+
 });
 
 /******************************************************************************************************************************

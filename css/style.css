@@ -359,7 +359,7 @@ table {
 .menu-button {
 	position: fixed;
 	top: 1.5em;
-	left: 1.5em;
+	right: 2em;
 	z-index: 1000;
 	width: 3em;
 	height: 3em;
@@ -399,7 +399,7 @@ table {
 
 .icon-list {
     float: right;
-    padding: 1.5em 3em;
+    padding: 1.5em 9em;
 }
 
 .icon-list a {
@@ -420,7 +420,7 @@ table {
     font-size: 0.5em;
     font-weight: 700;
     padding-top: 0.5em;
-    padding-bottom: 1em;
+    padding-bottom: 1.5em;
     transition: color 0.3s ease;
 }
 
@@ -429,12 +429,12 @@ table {
 }
 
 .show-menu .menu-wrap {
-    height: 75px;
+    height: 400px;
 }
 
 .show-menu .content-wrap {
-    -webkit-transform: translate3d(0, 75px, 0);
-    transform: translate3d(0, 75px, 0);
+    -webkit-transform: translate3d(0, 200px, 0);
+    transform: translate3d(0, 200px, 0);
 }
 
 /* Mobile Styles */
@@ -447,7 +447,9 @@ table {
     
     .show-menu .menu-wrap {
         height: auto;
-        padding: 1em 0;
+        min-height: 300px;
+        max-height: 80vh;
+        overflow-y: auto;
     }
 
     .icon-list a {
@@ -1592,4 +1594,103 @@ Portfolio Styles
 /* Adjust content padding for menu */
 .section-padding {
     padding-top: 120px;
+}
+
+/* Site Logo Styles */
+.site-logo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.site-logo a {
+  display: block;
+  text-decoration: none;
+  border: none;
+  transition: opacity 0.3s ease;
+}
+
+.site-logo img {
+  width: 100px;
+  height: 100px;
+}
+
+.site-logo a:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+  .site-logo {
+    left: 15px;
+  }
+  .site-logo img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Enhanced Footer Styles */
+.enhanced-footer {
+    background-color: #f3f5f8;
+    padding: 60px 0 30px;
+    text-align: center;
+}
+
+.footer-logo {
+    margin-bottom: 30px;
+}
+
+.footer-logo img {
+    width: 120px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.footer-contact {
+    margin-bottom: 30px;
+}
+
+.footer-contact p {
+    color: #07393C;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.footer-social {
+    margin-bottom: 30px;
+}
+
+.footer-social .social-btn {
+    margin: 0 5px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.footer-social .social-btn:hover {
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(7, 57, 60, 0.1);
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    color: #07393C;
+    font-size: 14px;
+    margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .enhanced-footer {
+        padding: 40px 0 20px;
+    }
+    
+    .footer-logo img {
+        width: 80px;
+    }
 }
