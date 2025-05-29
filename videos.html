@@ -5,157 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Videos - Nicole Lam</title>
+    <!-- Critical CSS -->
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/lightbox/css/lightbox.css" rel="stylesheet">
-    <link href="assets/textrotator/simpletextrotator.css" rel="stylesheet">
-    <link href="assets/flexslider/flexslider.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
     <link href="css/footer.css" rel="stylesheet">
     <link href="img/logo_color.ico" rel="shortcut icon" type="image/x-icon" />
+    <!-- Defer non-critical CSS -->
+    <link href="assets/lightbox/css/lightbox.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="assets/textrotator/simpletextrotator.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="assets/flexslider/flexslider.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="css/animate.css" rel="stylesheet" media="print" onload="this.media='all'">
     <style>
-      .video-hero {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-        height: 0;
-        margin-bottom: 50px;
-      }
-      .video-hero iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 15px;
-      }
-      .video-card {
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        overflow: hidden;
-        margin-bottom: 30px;
-      }
-      .video-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-      }
+      /* Consolidated and optimized styles */
       .video-wrapper {
         position: relative;
-        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        padding-bottom: 56.25%;
         height: 0;
-      }
-      .video-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-      .video-content {
-        padding: 20px;
-      }
-      .video-content h3 {
-        margin-top: 0;
-        margin-bottom: 8px;
-        font-size: 1.2em;
-        line-height: 1.3;
-        color: #333;
-      }
-      .video-content p {
-        margin: 0;
-        color: #666;
-        font-size: 0.9em;
-      }
-      .video-grid {
-        margin-top: 50px;
-      }
-      @media (max-width: 768px) {
-        .video-card {
-          margin-bottom: 20px;
-        }
-        .video-content {
-          height: auto;
-          min-height: 110px;
-        }
-      }
-      .category-section {
-        margin-bottom: 50px;
-        padding: 30px;
-        background: rgba(255,255,255,0.05);
-        border-radius: 15px;
-      }
-      .category-section h3 {
-        color: #333;
         margin-bottom: 30px;
-        position: relative;
-      }
-      .category-section h3:after {
-        content: '';
-        display: block;
-        width: 50px;
-        height: 2px;
-        background: #007bff;
-        margin: 15px auto;
-      }
-      .mb-4 {
-        margin-bottom: 1.5rem;
-      }
-      .ensemble-title {
-        text-align: center;
-        margin: 40px 0 30px;
-        color: #007bff;
-        font-size: 1.8em;
-        position: relative;
-      }
-      .ensemble-title:after {
-        content: '';
-        display: block;
-        width: 100px;
-        height: 3px;
-        background: rgba(0,123,255,0.2);
-        margin: 15px auto;
-      }
-      .placeholder-content {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #f8f9fa;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: #6c757d;
-      }
-      .featured-grid {
-        margin-bottom: 50px;
-      }
-      .featured-primary {
-        margin-bottom: 30px;
-      }
-      .featured-secondary {
-        margin-bottom: 30px;
-      }
-      .video-card {
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        overflow: hidden;
-        margin-bottom: 30px;
-      }
-      .video-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-      }
-      .video-wrapper {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-        height: 0;
       }
       .video-wrapper iframe {
         position: absolute;
@@ -165,65 +32,58 @@
         height: 100%;
         border-radius: 10px 10px 0 0;
       }
+      .video-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        overflow: hidden;
+        margin-bottom: 30px;
+      }
+      .video-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      }
       .video-content {
         padding: 20px;
       }
       .video-content h3 {
-        margin-top: 0;
-        font-size: 1.5em;
+        margin: 0 0 8px;
+        font-size: 1.2em;
         color: #333;
       }
-      .featured-primary .video-wrapper {
-        padding-bottom: 65%; /* Slightly taller ratio for primary videos */
+      .video-content p {
+        margin: 0;
+        color: #666;
+        font-size: 0.9em;
       }
-      .video-grid {
-        margin-top: 50px;
+      .featured-section {
+        background-color: rgba(0,123,255,0.03);
+        padding: 60px 0;
+        margin-bottom: 50px;
       }
-      @media (max-width: 768px) {
-        .featured-primary, .featured-secondary {
-          margin-bottom: 20px;
-        }
-      }
-      .placeholder-content {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+      .featured-card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
         height: 100%;
-        background: #f8f9fa;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: #6c757d;
+        overflow: hidden;
+      }
+      .featured-card:hover {
+        transform: translateY(-5px);
       }
       .featured-label {
         color: #007bff;
+        font-size: 1.8em;
         font-weight: 600;
-        text-transform: uppercase;
-        font-size: 0.9em;
-        margin-bottom: 8px;
-        display: block;
+        margin: 20px 0;
+        text-align: center;
       }
-      
-      .featured-description {
-        color: #666;
-        margin-top: 8px;
-      }
-      
-      .primary-card {
-        border: 2px solid rgba(0,123,255,0.1);
-      }
-      
-      .secondary-card {
-        border: 1px solid rgba(0,0,0,0.1);
-      }
-      
       .filter-buttons {
         margin-bottom: 40px;
+        text-align: center;
       }
-      
       .btn-filter {
         background: transparent;
         border: 2px solid #007bff;
@@ -234,208 +94,64 @@
         transition: all 0.3s ease;
         font-weight: 500;
       }
-      
       .btn-filter:hover,
       .btn-filter.active {
         background: #007bff;
         color: white;
       }
-      
       .performance-item {
-        transition: all 0.4s ease;
+        transition: opacity 0.4s ease;
       }
-      
-      /* Ensure 3 items per row on laptop */
       @media (min-width: 992px) {
         .performance-item {
           width: 33.333%;
           padding: 0 15px;
         }
       }
-      
-      /* 2 items per row on tablet */
       @media (min-width: 768px) and (max-width: 991px) {
         .performance-item {
           width: 50%;
           padding: 0 15px;
         }
       }
-      
-      /* 1 item per row on mobile */
       @media (max-width: 767px) {
         .performance-item {
           width: 100%;
           padding: 0 15px;
         }
+        .featured-card, .video-card {
+          margin-bottom: 20px;
+        }
       }
-      
-      .row {
+      #performance-grid {
         display: flex;
         flex-wrap: wrap;
-        margin: 0 -15px;
+        margin-right: -15px;
+        margin-left: -15px;
       }
       
-      .category-toggle {
-        background: rgba(0,123,255,0.05);
-        padding: 15px 20px;
-        border-radius: 8px;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      
-      .category-toggle h3 {
-        margin: 0;
-        color: #007bff;
-      }
-      
-      .toggle-icon {
-        font-size: 24px;
-        color: #007bff;
-      }
-      
-      .category-content {
-        display: none;
-        padding: 20px 0;
-      }
-      
-      .category-content.active {
-        display: block;
-      }
-      
-      .subcategory {
+      #performance-grid > div {
         margin-bottom: 30px;
       }
       
-      .subcategory h4 {
-        color: #333;
-        margin-bottom: 20px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
-      }
-      .featured-section {
-        background-color: rgba(0,123,255,0.03);
-        padding: 60px 0;
-        margin-bottom: 50px;
+      @media (min-width: 992px) {
+        #performance-grid .performance-item {
+          flex: 0 0 33.333333%;
+          max-width: 33.333333%;
+        }
       }
       
-      .featured-card {
-        background: white;
-        border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        height: 100%;
-        overflow: hidden;
+      @media (min-width: 768px) and (max-width: 991px) {
+        #performance-grid .performance-item {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
       }
       
-      .featured-card:hover {
-        transform: translateY(-5px);
-      }
-      
-      .featured-label {
-        color: #007bff;
-        font-size: 1.8em;
-        font-weight: 600;
-        margin: 20px 0;
-        text-align: center;
-      }
-      
-      .featured-description {
-        color: #666;
-        text-align: center;
-        margin: 0 20px 20px;
-      }
-      
-      .secondary-section {
-        padding: 40px 0;
-        margin-bottom: 50px;
-      }
-      
-      .secondary-card {
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-        transition: transform 0.3s ease;
-        height: 100%;
-        overflow: hidden;
-      }
-      
-      .secondary-card:hover {
-        transform: translateY(-3px);
-      }
-      
-      .secondary-label {
-        color: #333;
-        font-size: 1.4em;
-        margin: 15px 0;
-        text-align: center;
-      }
-      
-      .more-performances {
-        padding: 40px 0;
-      }
-      
-      .more-performances h2 {
-        text-align: center;
-        margin-bottom: 40px;
-        color: #007bff;
-      }
-      
-      .category-section {
-        margin-bottom: 50px;
-      }
-      
-      .category-title {
-        color: #333;
-        font-size: 1.6em;
-        margin-bottom: 30px;
-        padding-bottom: 10px;
-        border-bottom: 2px solid rgba(0,123,255,0.1);
-      }
-      
-      .video-card {
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        overflow: hidden;
-        margin-bottom: 30px;
-      }
-      
-      .video-wrapper {
-        position: relative;
-        padding-bottom: 56.25%;
-        height: 0;
-      }
-      
-      .video-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-      
-      .video-content {
-        padding: 20px;
-      }
-      
-      .video-content h3 {
-        margin-top: 0;
-        font-size: 1.2em;
-        color: #333;
-      }
-      
-      .video-content p {
-        color: #666;
-        margin: 5px 0 0;
-        font-size: 0.9em;
-      }
-      
-      @media (max-width: 768px) {
-        .featured-card, .secondary-card {
-          margin-bottom: 30px;
+      @media (max-width: 767px) {
+        #performance-grid .performance-item {
+          flex: 0 0 100%;
+          max-width: 100%;
         }
       }
     </style>
@@ -494,6 +210,7 @@
               <div class="video-wrapper">
                 <iframe width="560" 
                         height="315" 
+                        loading="lazy"
                         src="https://www.youtube.com/embed/KzPUByNWogA" 
                         title="Orchestral Conducting" 
                         frameborder="0" 
@@ -509,7 +226,8 @@
               <div class="video-wrapper">
                 <iframe width="560" 
                         height="315" 
-                        src="https://youtu.be/MtPofTIUASk?si=N3JwZ5wYHmLlglnA" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/MtPofTIUASk?si=0dsBnWdB2Kmsxw-d" 
                         title="Musical Direction" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -528,33 +246,35 @@
         <div class="row">
           <!-- Piano Performance -->
           <div class="col-md-6 wow fadeInUp">
-            <div class="secondary-card">
+            <div class="featured-card">
               <div class="video-wrapper">
                 <iframe width="560" 
                         height="315" 
+                        loading="lazy"
                         src="https://www.youtube.com/embed/i0QtmXOuF2s?start=250" 
                         title="Piano Performance" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen></iframe>
               </div>
-              <h3 class="secondary-label">Piano Performance</h3>
+              <h2 class="featured-label">Piano Performance</h2>
             </div>
           </div>
 
           <!-- Vocal Performance -->
           <div class="col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-            <div class="secondary-card">
+            <div class="featured-card">
               <div class="video-wrapper">
                 <iframe width="560" 
                         height="315" 
+                        loading="lazy"
                         src="https://www.youtube.com/embed/Wvl4BIK1lnU" 
                         title="Vocal Performance" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen></iframe>
               </div>
-              <h3 class="secondary-label">Vocal Performance</h3>
+              <h2 class="featured-label">Vocal Performance</h2>
             </div>
           </div>
         </div>
@@ -575,15 +295,18 @@
           <button class="btn btn-filter" data-filter="fun">Just For Fun</button>
         </div>
         
-        <div class="row">
+        <div class="row" id="performance-grid">
           <!-- Musical Direction - Gypsy Overture -->
-          <div class="col-md-4 wow fadeInUp performance-item musical-direction">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item musical-direction">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://youtu.be/iicUgA_Xgc4?si=TYqjzOTPwFfrK6UH" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/iicUgA_Xgc4?si=quyEca-yC875WOSD" 
                         title="Gypsy Overture" 
                         frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen></iframe>
               </div>
               <div class="video-content">
@@ -594,10 +317,13 @@
           </div>
 
           <!-- Athens Megaron International -->
-          <div class="col-md-4 wow fadeInUp performance-item orchestral">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item orchestral">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/NCEXlF7jvb4" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/NCEXlF7jvb4" 
                         title="Athens Megaron International Conducting Debut" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -611,10 +337,13 @@
           </div>
 
           <!-- Après une Lecture de Dante -->
-          <div class="col-md-4 wow fadeInUp performance-item piano">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item piano">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/XolR_n_kZbY" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/XolR_n_kZbY" 
                         title="Après une Lecture de Dante" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -627,11 +356,16 @@
             </div>
           </div>
 
+          <div class="clearfix visible-md visible-lg"></div>
+
           <!-- Weber Oberon -->
-          <div class="col-md-4 wow fadeInUp performance-item orchestral">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item orchestral">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/hBiTgHCR36E" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/hBiTgHCR36E" 
                         title="Weber Oberon Overture" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -645,14 +379,17 @@
           </div>
 
           <!-- West Side Story -->
-          <div class="col-md-4 wow fadeInUp performance-item musical-direction">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item musical-direction">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://youtu.be/KiI9b37TG-s?si=bDfVlQ606mYBlYBC" 
-                        title="West Side Story Overture" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen></iframe>
+                <iframe 
+                  width="560" 
+                  height="315" 
+                  src="https://www.youtube.com/embed/KiI9b37TG-s" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowfullscreen></iframe>
               </div>
               <div class="video-content">
                 <h3>Overture to "West Side Story"</h3>
@@ -662,10 +399,13 @@
           </div>
 
           <!-- Tchaikovsky Symphony No. 5 -->
-          <div class="col-md-4 wow fadeInUp performance-item orchestral">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item orchestral">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/vwAP5L4EKlo" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/vwAP5L4EKlo" 
                         title="Tchaikovsky Symphony No. 5" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -678,11 +418,16 @@
             </div>
           </div>
 
+          <div class="clearfix visible-md visible-lg"></div>
+
           <!-- Carlos Simon Holy Dance -->
-          <div class="col-md-4 wow fadeInUp performance-item orchestral">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item orchestral">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/jwnyv-JLuGY" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/jwnyv-JLuGY" 
                         title="Carlos Simon Holy Dance" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -696,10 +441,13 @@
           </div>
 
           <!-- An Die Musik -->
-          <div class="col-md-4 wow fadeInUp performance-item orchestral">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item orchestral">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/hIa5-sM4HWw" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/hIa5-sM4HWw" 
                         title="An Die Musik" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -713,10 +461,13 @@
           </div>
 
           <!-- Dvorak Symphony No. 9 -->
-          <div class="col-md-4 wow fadeInUp performance-item orchestral">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item orchestral">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/SbpJUcCgAk8" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/SbpJUcCgAk8" 
                         title="Dvorak Symphony No. 9" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -730,10 +481,13 @@
           </div>
 
           <!-- L'Isle Joyeuse -->
-          <div class="col-md-4 wow fadeInUp performance-item piano">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item piano">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/aLkiOg1HXiQ" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/aLkiOg1HXiQ" 
                         title="L'Isle Joyeuse" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -747,10 +501,13 @@
           </div>
 
           <!-- Beethoven Symphony No. 5 -->
-          <div class="col-md-4 wow fadeInUp performance-item orchestral">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item orchestral">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/93pTyN1A4sc" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/93pTyN1A4sc" 
                         title="Beethoven Symphony No. 5" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -764,10 +521,13 @@
           </div>
 
           <!-- Sakuntala Overture -->
-          <div class="col-md-4 wow fadeInUp performance-item orchestral">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item orchestral">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/k5FDlx4tVJc" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/k5FDlx4tVJc" 
                         title="Sakuntala Overture" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -781,10 +541,13 @@
           </div>
 
           <!-- Tap Dance -->
-          <div class="col-md-4 wow fadeInUp performance-item orchestral">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item orchestral">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/pcRVRiHk9YQ" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/pcRVRiHk9YQ" 
                         title="Carlos Simon Tap Dance" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -798,10 +561,13 @@
           </div>
 
           <!-- Romeo and Juliet -->
-          <div class="col-md-4 wow fadeInUp performance-item orchestral">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item orchestral">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/4S3FD-DdazE" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/4S3FD-DdazE" 
                         title="Tchaikovsky Romeo and Juliet" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -815,10 +581,13 @@
           </div>
 
           <!-- Ring Shout -->
-          <div class="col-md-4 wow fadeInUp performance-item orchestral">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item orchestral">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/gslRpDIcRhM" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/gslRpDIcRhM" 
                         title="Ring Shout" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -832,10 +601,13 @@
           </div>
 
           <!-- Scriabin Etude -->
-          <div class="col-md-4 wow fadeInUp performance-item piano">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item piano">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/R4LyGIhEac0" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/R4LyGIhEac0" 
                         title="Scriabin Etude" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -849,10 +621,13 @@
           </div>
 
           <!-- Just For Fun Section -->
-          <div class="col-md-4 wow fadeInUp performance-item fun">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item fun">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/dGFX0T59ZLM" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/dGFX0T59ZLM" 
                         title="Serpent's Kiss Four Hands" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -865,10 +640,13 @@
             </div>
           </div>
 
-          <div class="col-md-4 wow fadeInUp performance-item fun">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item fun">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/ow7OQgRnJ4M" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/ow7OQgRnJ4M" 
                         title="Infante Danses Andalouses" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -881,10 +659,13 @@
             </div>
           </div>
 
-          <div class="col-md-4 wow fadeInUp performance-item fun">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item fun">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/zEC7KR2ZjSQ" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/zEC7KR2ZjSQ" 
                         title="You'll Never Walk Alone" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -897,10 +678,13 @@
             </div>
           </div>
 
-          <div class="col-md-4 wow fadeInUp performance-item fun">
+          <div class="col-sm-6 col-md-4 wow fadeInUp performance-item fun">
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/h4sOZKFVYaU" 
+                <iframe width="560" 
+                        height="315" 
+                        loading="lazy"
+                        src="https://www.youtube.com/embed/h4sOZKFVYaU" 
                         title="Carnival of Animals Virtual Concert" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -951,37 +735,62 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="assets/smoothscroll/smoothscroll.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="assets/flexslider/jquery.flexslider.js"></script>
-    <script src="js/modernizr.js"></script>
-    <script src="assets/textrotator/jquery.simple-text-rotator.js"></script>
-    <script src="assets/lightbox/js/lightbox.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" defer></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js" defer></script>
+    <script src="js/waypoints.min.js" defer></script>
+    <script src="js/classie.js" defer></script>
+    <script src="assets/flexslider/jquery.flexslider.js" defer></script>
+    <script src="js/modernizr.js" defer></script>
+    <script src="assets/textrotator/jquery.simple-text-rotator.js" defer></script>
+    <script src="assets/lightbox/js/lightbox.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/script.js" defer></script>
     <script>
+      // Optimized JavaScript
       document.addEventListener('DOMContentLoaded', function() {
+        // Intersection Observer for lazy loading videos
+        const observerOptions = {
+          root: null,
+          rootMargin: '50px',
+          threshold: 0.1
+        };
+
+        const videoObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const iframe = entry.target;
+              const src = iframe.getAttribute('data-src');
+              if (src) {
+                iframe.src = src;
+                iframe.removeAttribute('data-src');
+              }
+              observer.unobserve(iframe);
+            }
+          });
+        }, observerOptions);
+
+        // Observe all iframes
+        document.querySelectorAll('iframe').forEach(iframe => {
+          if (iframe.src) {
+            iframe.setAttribute('data-src', iframe.src);
+            iframe.removeAttribute('src');
+            videoObserver.observe(iframe);
+          }
+        });
+
         // Filter functionality
         const filterButtons = document.querySelectorAll('.btn-filter');
         const performanceItems = document.querySelectorAll('.performance-item');
         
         filterButtons.forEach(button => {
           button.addEventListener('click', () => {
-            // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
             button.classList.add('active');
             
             const filter = button.getAttribute('data-filter');
             
             performanceItems.forEach(item => {
-              if (filter === 'all') {
-                item.style.display = '';
-                item.classList.add('fadeInUp');
-              } else if (item.classList.contains(filter)) {
+              if (filter === 'all' || item.classList.contains(filter)) {
                 item.style.display = '';
                 item.classList.add('fadeInUp');
               } else {
@@ -989,20 +798,6 @@
                 item.classList.remove('fadeInUp');
               }
             });
-          });
-        });
-        
-        // Toggle functionality
-        const toggles = document.querySelectorAll('.category-toggle');
-        
-        toggles.forEach(toggle => {
-          toggle.addEventListener('click', () => {
-            const targetId = toggle.getAttribute('data-target');
-            const content = document.getElementById(targetId);
-            const icon = toggle.querySelector('.toggle-icon');
-            
-            content.classList.toggle('active');
-            icon.textContent = content.classList.contains('active') ? '-' : '+';
           });
         });
       });
