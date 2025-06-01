@@ -1,227 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nicole Lam</title>
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/lightbox/css/lightbox.css" rel="stylesheet">
-    <link href="assets/textrotator/simpletextrotator.css" rel="stylesheet">
-    <link href="assets/flexslider/flexslider.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/footer.css" rel="stylesheet">
-    <link href="img/logo_black.ico" rel="shortcut icon" type="image/x-icon" />
-    <style>
-      body {
-        background-color: #000;
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-      }
 
-      .hero {
-        flex: 1;
-      }
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nicole Lam</title>
+  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/lightbox/css/lightbox.css" rel="stylesheet">
+  <link href="assets/textrotator/simpletextrotator.css" rel="stylesheet">
+  <link href="assets/flexslider/flexslider.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="css/footer.css" rel="stylesheet">
+  <link href="img/logo_black.ico" rel="shortcut icon" type="image/x-icon" />
+  <style>
+    body {
+      background-color: #000;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
 
+    .hero {
+      flex: 1;
+    }
+
+    .header-controls {
+      position: fixed;
+      top: 10px;
+      left: 20px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+    }
+
+    .btn-flash {
+      display: inline-block;
+      color: #6da999;
+      background-color: transparent;
+      border: 2px solid #6da999;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      animation: pulseBorder 2s infinite;
+    }
+
+    .btn-flash:hover {
+      background-color: #6da999;
+      color: white;
+      animation: none;
+    }
+
+    @keyframes pulseBorder {
+      0% {
+        box-shadow: 0 0 0 0 rgba(109, 169, 153, 0.4);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(109, 169, 153, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(109, 169, 153, 0);
+      }
+    }
+    @media (max-width: 767px) {
       .header-controls {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        gap: 20px;
+        top: 15px;
+        left: 15px;
       }
+    }
 
-      /* Simple explore link styles */
-      .explore-link {
-        color: white;
-        border: 2px solid white;
-        padding: 12px 35px;
-        display: inline-block;
-        margin-top: 30px;
-        text-decoration: none;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 1.2em;
-        transition: all 0.3s ease;
-        animation: pulse 2s infinite;
-        position: relative;
-        transform: translateY(100px);
-        cursor: pointer;
-      }
+    .inner {
+      margin-top: 20px;
+    }
 
-      .explore-link:hover {
-        background-color: white;
-        color: black;
-        text-decoration: none;
-        animation: none;
-      }
+    h1 {
+      margin: 0;
+      padding: 0;
+    }
 
-      @keyframes pulse {
-        0% {
-          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
-        }
-        70% {
-          box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-        }
-      }
+    .navicon {
+      display: none;
+    }
+  </style>
+</head>
 
-      @media (max-width: 767px) {
-        .header-controls {
-          top: 15px;
-          left: 15px;
-        }
-      }
+<body>
+  <!-- Preloader -->
+  <div id="preloader"></div>
 
-      .inner {
-        margin-top: 20px;
-      }
-
-      h1 {
-        margin: 0;
-        padding: 0;
-      }
-
-      .navicon {
-        display: none;
-      }
-
-      .explore-simple {
-        color: white; 
-        border: 2px solid white; 
-        padding: 12px 35px; 
-        font-size: 1.2em; 
-        text-decoration: none; 
-        text-transform: uppercase; 
-        letter-spacing: 2px; 
-        animation: pulse 1.5s infinite; 
-        display: inline-block;
-        transition: all 0.3s ease;
-      }
-
-      .explore-simple:hover {
-        background-color: white;
-        color: black;
-        text-decoration: none;
-        animation: none;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Preloader -->
-    <div id="preloader"></div>
-
-    <!-- Header -->
-    <header>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="header-controls">
-            <div class="site-logo">
-              <a href="index.html">
-                <img src="img/logo_color.ico" alt="Nicole Lam">
-              </a>
-            </div>
-            <button class="menu-button" id="open-button"></button>
-          </div>
-          <div class="menu-wrap">
-            <nav class="menu">
-              <div class="icon-list">
-                <a href="index.html"><i class="fa fa-fw fa-home"></i><span>Home</span></a>
-                <a href="about.html"><i class="fa fa-fw fa-quote-left"></i><span>About</span></a>
-                <a href="portfolio.html"><i class="fa fa-fw fa-calendar"></i><span>Portfolio</span></a>
-                <a href="videos.html"><i class="fa fa-fw fa-video-camera"></i><span>Videos</span></a>
-                <a href="news.html"><i class="fa fa-fw fa-newspaper-o"></i><span>News</span></a>
-                <a href="beyond.html"><i class="fa fa-fw fa-plus-circle"></i><span>Beyond</span></a>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-right navicon">
-            <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8 col-md-offset-1 inner" style="margin-bottom: 10px;">
-            <h1 class="animated fadeInDown">
-              NICOLE<br/>
-              <span>LAM</span>
-            </h1>
-            <!-- <h3 class="animated fadeInUp delay-05s"><span class="rotate">Music Director,Conductor,Pianist,Vocalist</span></h3>Text Rotator -->
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3 text-center" style="position: relative;">
-            <a href="about.html" class="explore-simple">EXPLORE</a>
-            <a href="#" class="scrollto" style="opacity: 0;">
-              <p></p>
-              <p class="scrollto--arrow"><img src="img/scroll-down.png" alt="scroll down arrow"></p>
+  <!-- Header -->
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="header-controls">
+          <div class="site-logo">
+            <a href="index.html">
+              <img src="img/logo_color.ico" alt="Nicole Lam">
             </a>
           </div>
+          <button class="menu-button" id="open-button"></button>
+        </div>
+        <div class="menu-wrap">
+          <nav class="menu">
+            <div class="icon-list">
+              <a href="index.html"><i class="fa fa-fw fa-home"></i><span>Home</span></a>
+              <a href="about.html"><i class="fa fa-fw fa-quote-left"></i><span>About</span></a>
+              <a href="resume.html"><i class="fa fa-fw fa-file-text-o"></i><span>Resume</span></a>
+              <a href="videos.html"><i class="fa fa-fw fa-video-camera"></i><span>Videos</span></a>
+              <a href="news.html"><i class="fa fa-fw fa-newspaper-o"></i><span>News</span></a>
+              <!-- <a href="beyond.html"><i class="fa fa-fw fa-plus-circle"></i><span>Beyond</span></a> -->
+            </div>
+          </nav>
         </div>
       </div>
-    </section>
+    </div>
+  </header>
 
-    <!-- Enhanced Footer -->
-    <footer class="enhanced-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="footer-logo">
-              <a href="index.html">
-                <img src="img/logo_color.ico" alt="Nicole Lam">
-              </a>
-            </div>
-            <div class="footer-contact">
-              <a href="mailto:nicolelammusic@gmail.com">
-                <i class="fa fa-envelope"></i> nicolelammusic@gmail.com
-              </a>
-            </div>
-            <div class="footer-social">
-              <a href="https://www.linkedin.com/in/nicoleytlam" class="social-btn" target="_blank" aria-label="LinkedIn">
-                <i class="fa fa-linkedin"></i>
-              </a>
-              <a href="https://www.instagram.com/nic.music" class="social-btn" target="_blank" aria-label="Instagram">
-                <i class="fa fa-instagram"></i>
-              </a>
-              <a href="https://www.youtube.com/@nicolelammusic" class="social-btn" target="_blank" aria-label="YouTube">
-                <i class="fa fa-youtube"></i>
-              </a>
-            </div>
-            <div class="footer-bottom">
-              <p>All Rights Reserved. &copy; 2025 Nicole Lam</p>
-            </div>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-right navicon">
+          <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-1 inner" style="margin-bottom: 10px;">
+          <h1 class="animated fadeInDown">
+            NICOLE<br />
+            <span>LAM</span>
+          </h1>
+          <!-- <h3 class="animated fadeInUp delay-05s"><span class="rotate">Music Director,Conductor,Pianist,Vocalist</span> -->
+          <!-- </h3>Text Rotator -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center" style="position: relative;">
+          <a href="#" class="scrollto" style="opacity: 100;">
+            <p>See More</p>
+            <p class="scrollto--arrow"><img src="img/scroll-down.png" alt="scroll down arrow"></p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro section-padding color-bg" id="spotlight">
+  <div class="container">
+    <div class="about-content">
+      <p style="margin-top: 25px; font-size: 30px; color: #f1f1f1;">
+        <strong>NICOLE LAM</strong> is a conductor and musical director forging a dual path in symphonic and theatrical music.</p>
+      </div>
+
+      <p style="margin-bottom: 10px; font-size: 15px; color: #f1f1f1;">
+        <strong>Currently:</strong> Associate Music Director for <em>Guys and Dolls</em> at the Ogunquit Playhouse.
+      </p>
+      <p style="margin-top: 0; font-size: 15px; color: #f1f1f1;">
+        <strong>Recently:</strong> Awarded the highest performing arts Prize at Yale College (The Louis Sudler Prize) and completed a B.S./M.S. in Applied Mathematics and Computer Science.
+      </p>
+
+
+      <div style="margin-top: 20px; margin-bottom: 100px">
+        <a href="about.html" class="btn btn-lg" style="background: #6da999; color: white; padding: 14px 32px; border-radius: 30px; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;">
+          Learn More About Nicole
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Enhanced Footer -->
+  <footer class="enhanced-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="footer-logo">
+            <a href="index.html">
+              <img src="img/logo_color.ico" alt="Nicole Lam">
+            </a>
+          </div>
+          <div class="footer-contact">
+            <a href="mailto:nicolelammusic@gmail.com">
+              <i class="fa fa-envelope"></i> nicolelammusic@gmail.com
+            </a>
+          </div>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/nicoleytlam" class="social-btn" target="_blank" aria-label="LinkedIn">
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/nic.music" class="social-btn" target="_blank" aria-label="Instagram">
+              <i class="fa fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@nicolelammusic" class="social-btn" target="_blank" aria-label="YouTube">
+              <i class="fa fa-youtube"></i>
+            </a>
+          </div>
+          <div class="footer-bottom">
+            <p>All Rights Reserved. &copy; 2025 Nicole Lam</p>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="assets/smoothscroll/smoothscroll.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="assets/flexslider/jquery.flexslider.js"></script>
-    <script src="js/modernizr.js"></script>
-    <script src="assets/textrotator/jquery.simple-text-rotator.js"></script>
-    <script src="assets/lightbox/js/lightbox.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="assets/smoothscroll/smoothscroll.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/waypoints.min.js"></script>
+  <script src="js/classie.js"></script>
+  <script src="assets/flexslider/jquery.flexslider.js"></script>
+  <script src="js/modernizr.js"></script>
+  <script src="assets/textrotator/jquery.simple-text-rotator.js"></script>
+  <script src="assets/lightbox/js/lightbox.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
 </html>
