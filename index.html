@@ -89,14 +89,26 @@
     .navicon {
       display: none;
     }
+
+    .flexslider .slides img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .recently-bullets {
+      text-align: left;
+      max-width: 700px;
+      margin: 20px auto;
+      color: #ccc;
+      font-size: 16px;
+    }
   </style>
 </head>
 
 <body>
-  <!-- Preloader -->
   <div id="preloader"></div>
-
-  <!-- Header -->
   <header>
     <div class="container-fluid">
       <div class="row">
@@ -124,7 +136,6 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero" id="hero">
     <div class="container">
       <div class="row">
@@ -138,8 +149,6 @@
             NICOLE<br />
             <span>LAM</span>
           </h1>
-          <!-- <h3 class="animated fadeInUp delay-05s"><span class="rotate">Music Director,Conductor,Pianist,Vocalist</span> -->
-          <!-- </h3>Text Rotator -->
         </div>
       </div>
       <div class="row">
@@ -153,20 +162,21 @@
     </div>
   </section>
 
-
   <section class="intro section-padding color-bg" id="spotlight" style="padding: 80px 0; background-color: #041529;">
     <div class="container text-center">
       <div class="about-content" style="max-width: 800px; margin: 0 auto;">
-        <p style="font-size: 28px; line-height: 1.6; color: #ffffff;">
-          <strong>Nicole Lam</strong> is an orchestral conductor, musical director, pianist, and vocalist based in New York City.
-
-        <p style="margin-bottom: 6px; font-size: 16px; color: #cccccc;">
-          <strong>Currently:</strong> Associate Music Director for <em>Guys and Dolls</em> at the Ogunquit Playhouse.
-        </p>
-        <p style="margin-top: 0; font-size: 16px; color: #cccccc;">
-          <strong>Recently:</strong> Assistant conductor of Yale Symphony Orchestra and music director of Berkeley College Orchestra. Awarded Yale College’s highest arts prize and top 5 academic prize, The Louis Sudler Prize, and graduated with a B.S./M.S. in Applied Mathematics and Computer Science with distinction in both majors.
-        </p>
-
+        <p style="font-size: 28px; line-height: 1.6; color: #ffffff;"><strong>Nicole Lam</strong> is an orchestral conductor, musical director, pianist, and vocalist based in New York City.</p>
+        <p style="margin-bottom: 0px; font-size: 16px; color: #cccccc;"><strong>Currently:</strong></p>
+        <ul class="recently-bullets">
+          <li> Associate Music Director for <em>Guys and Dolls</em> at the Ogunquit Playhouse</li>
+        </ul>
+        <p style="margin-top: 0; margin-bottom: 0; font-size: 16px; color: #cccccc;"><strong>Recently:</strong></p>
+        <ul class="recently-bullets">
+          <li>Assistant conductor of Yale Symphony Orchestra</li>
+          <li>Music director of Berkeley College Orchestra</li>
+          <li>Recipient of Yale College’s Louis Sudler Prize for excellence in the arts</li>
+          <li>Graduated with distinction in both Applied Mathematics and Computer Science (B.S./M.S.)</li>
+        </ul>
         <div style="margin-top: 40px;">
           <a href="about.html" class="btn-flash">Learn More About Nicole</a>
         </div>
@@ -174,8 +184,94 @@
     </div>
   </section>
 
+  <!-- Slideshow Section -->
+  <section style="background-color: #041529; padding: 40px 0;">
+    <div class="container text-center">
+      <div style="position: relative; max-width: 800px; margin: 0 auto; overflow: hidden; border-radius: 10px;">
+        <div id="slideshow-track" style="display: flex; transition: transform 0.8s ease;">
+          <!-- Images will be injected dynamically -->
+        </div>
+        
+        <!-- Arrows -->
+        <button id="prev" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: none; border: none; color: white; font-size: 24px; cursor: pointer; z-index: 10;">&#10094;</button>
+        <button id="next" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: none; border: none; color: white; font-size: 24px; cursor: pointer; z-index: 10;">&#10095;</button>
+      </div>
 
-  <!-- Enhanced Footer -->
+      <!-- Dots -->
+      <div id="dots" style="margin-top: 15px;">
+        <!-- Dots injected dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const totalImages = 13;
+    const track = document.getElementById('slideshow-track');
+    const dotsContainer = document.getElementById('dots');
+    let currentIndex = 0;
+    let interval;
+
+    // Load images
+    for (let i = 1; i <= totalImages; i++) {
+      const img = document.createElement('img');
+      img.src = `img/slideshow/image${i}.jpg`;
+      img.style.maxHeight = '500px';
+      img.style.margin = '0 auto';
+      img.style.objectFit = 'contain';
+      img.style.flex = '0 0 100%';
+      img.style.display = 'block';
+      img.style.background = '#000';
+      img.style.alignSelf = 'center';
+      track.appendChild(img);
+
+      const dot = document.createElement('span');
+      dot.style.display = 'inline-block';
+      dot.style.width = '10px';
+      dot.style.height = '10px';
+      dot.style.margin = '0 5px';
+      dot.style.background = i === 1 ? '#6da999' : '#aaa';
+      dot.style.borderRadius = '50%';
+      dot.style.cursor = 'pointer';
+      dot.addEventListener('click', () => goToSlide(i - 1));
+      dotsContainer.appendChild(dot);
+    }
+
+    function updateSlide() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      [...dotsContainer.children].forEach((dot, i) => {
+        dot.style.background = i === currentIndex ? '#6da999' : '#aaa';
+      });
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateSlide();
+      resetInterval();
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalImages;
+      updateSlide();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+      updateSlide();
+    }
+
+    document.getElementById('next').addEventListener('click', nextSlide);
+    document.getElementById('prev').addEventListener('click', prevSlide);
+
+    function resetInterval() {
+      clearInterval(interval);
+      interval = setInterval(nextSlide, 4000);
+    }
+
+    interval = setInterval(nextSlide, 4000);
+  </script>
+
+
+
   <footer class="enhanced-footer">
     <div class="container">
       <div class="row">
@@ -202,14 +298,13 @@
             </a>
           </div>
           <div class="footer-bottom">
-            <p>All Rights Reserved. &copy; 2025 Nicole Lam</p>
+            <p>All Rights Reserved. Designed by Nicole Lam via HTML. &copy; 2025 Nicole Lam</p>
           </div>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="assets/smoothscroll/smoothscroll.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -221,6 +316,16 @@
   <script src="assets/lightbox/js/lightbox.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/script.js"></script>
+  <script>
+    $(window).load(function () {
+      $('#spotlightSlider').flexslider({
+        animation: "slide",
+        directionNav: false,
+        controlNav: true,
+        pauseOnHover: true
+      });
+    });
+  </script>
 </body>
 
 </html>

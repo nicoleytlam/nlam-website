@@ -78,3 +78,22 @@ Menu
 })();
 
 
+/******************************************************************************************************************************
+Auto-Close Menu on Mobile Page Navigation
+*******************************************************************************************************************************/
+document.addEventListener('DOMContentLoaded', function () {
+  const menuLinks = document.querySelectorAll('.icon-list a');
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      if (window.innerWidth <= 767) {
+        document.body.classList.remove('show-menu');
+        const menuWrap = document.querySelector('.menu-wrap');
+        if (menuWrap) {
+          menuWrap.style.height = '0px';
+        }
+        sessionStorage.setItem('menuOpen', 'false');
+      }
+    });
+  });
+});
