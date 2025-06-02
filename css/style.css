@@ -341,6 +341,65 @@ table {
     color: #90DDf0 !important;
 }
 
+/* Mobile-friendly top nav bar */
+@media (max-width: 767px) {
+  .menu-wrap {
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: none;
+    z-index: 9999;
+  }
+
+  .menu {
+    width: 100%;
+  }
+
+  .icon-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+  }
+
+  .icon-list a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: #333;
+    text-decoration: none;
+    padding: 5px;
+  }
+
+  .icon-list a i {
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+
+  /* Hide the menu open button */
+  #open-button {
+    display: none;
+  }
+
+  /* Prevent menu from sliding in/out */
+  .show-menu .menu-wrap {
+    transform: none !important;
+  }
+
+  body.show-menu {
+    overflow: auto !important;
+  }
+}
+
 .content-wrap {
 	overflow-y:scroll;
 	-webkit-overflow-scrolling:touch;
