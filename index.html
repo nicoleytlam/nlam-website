@@ -71,11 +71,30 @@
       }
     }
     @media (max-width: 767px) {
-      .header-controls {
-        top: 15px;
-        left: 15px;
-      }
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
+
+    .hero .container {
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      text-align: center;
+      color: white;
+    }
+
+    .scrollto--arrow img {
+      width: 30px;
+    }
+  }
 
     .inner {
       margin-top: 20px;
@@ -184,91 +203,149 @@
     </div>
   </section>
 
-  <!-- Slideshow Section -->
-  <section style="background-color: #041529; padding: 40px 0;">
-    <div class="container text-center">
-      <div style="position: relative; max-width: 800px; margin: 0 auto; overflow: hidden; border-radius: 10px;">
-        <div id="slideshow-track" style="display: flex; transition: transform 0.8s ease;">
-          <!-- Images will be injected dynamically -->
-        </div>
-        
-        <!-- Arrows -->
-        <button id="prev" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: none; border: none; color: white; font-size: 24px; cursor: pointer; z-index: 10;">&#10094;</button>
-        <button id="next" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: none; border: none; color: white; font-size: 24px; cursor: pointer; z-index: 10;">&#10095;</button>
-      </div>
+<!-- Slideshow Section -->
+<style>
+  #slideshow-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0 auto;
+  }
 
-      <!-- Dots -->
-      <div id="dots" style="margin-top: 15px;">
-        <!-- Dots injected dynamically -->
-      </div>
+  #slideshow-track {
+    display: flex;
+    transition: transform 1s ease-in-out;
+  }
+
+  #slideshow-track img {
+    flex: 0 0 100%;
+    object-fit: contain;
+    max-height: 500px;
+    width: 100%;
+    background: #000;
+  }
+
+  .arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  #prev { left: 10px; }
+  #next { right: 10px; }
+
+  #dots {
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  #dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background: #aaa;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  #dots .active {
+    background: #6da999;
+  }
+
+  @media (max-width: 768px) {
+    #slideshow-track img {
+      max-height: 300px;
+    }
+
+    .arrow-btn {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<section style="background-color: #041529; padding: 40px 0;">
+  <div class="container text-center">
+    <div id="slideshow-container">
+      <div id="slideshow-track"></div>
+      <button id="prev" class="arrow-btn">&#10094;</button>
+      <button id="next" class="arrow-btn">&#10095;</button>
     </div>
-  </section>
+    <div id="dots"></div>
+  </div>
+</section>
 
-  <script>
-    const totalImages = 13;
-    const track = document.getElementById('slideshow-track');
-    const dotsContainer = document.getElementById('dots');
-    let currentIndex = 0;
-    let interval;
+<script>
+  const totalImages = 13;
+  const track = document.getElementById('slideshow-track');
+  const dotsContainer = document.getElementById('dots');
+  let currentIndex = 0;
+  let interval;
 
-    // Load images
-    for (let i = 1; i <= totalImages; i++) {
-      const img = document.createElement('img');
-      img.src = `img/slideshow/image${i}.jpg`;
-      img.style.maxHeight = '500px';
-      img.style.margin = '0 auto';
-      img.style.objectFit = 'contain';
-      img.style.flex = '0 0 100%';
-      img.style.display = 'block';
-      img.style.background = '#000';
-      img.style.alignSelf = 'center';
-      track.appendChild(img);
+  // Load images and dots
+  for (let i = 1; i <= totalImages; i++) {
+    const img = document.createElement('img');
+    img.src = `img/slideshow/image${i}.jpg`;
+    track.appendChild(img);
 
-      const dot = document.createElement('span');
-      dot.style.display = 'inline-block';
-      dot.style.width = '10px';
-      dot.style.height = '10px';
-      dot.style.margin = '0 5px';
-      dot.style.background = i === 1 ? '#6da999' : '#aaa';
-      dot.style.borderRadius = '50%';
-      dot.style.cursor = 'pointer';
-      dot.addEventListener('click', () => goToSlide(i - 1));
-      dotsContainer.appendChild(dot);
-    }
-
-    function updateSlide() {
-      track.style.transform = `translateX(-${currentIndex * 100}%)`;
-      [...dotsContainer.children].forEach((dot, i) => {
-        dot.style.background = i === currentIndex ? '#6da999' : '#aaa';
-      });
-    }
-
-    function goToSlide(index) {
-      currentIndex = index;
+    const dot = document.createElement('span');
+    dot.addEventListener('click', () => {
+      currentIndex = i - 1;
       updateSlide();
       resetInterval();
-    }
+    });
+    dotsContainer.appendChild(dot);
+  }
 
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % totalImages;
-      updateSlide();
-    }
+  function updateSlide() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    [...dotsContainer.children].forEach((dot, i) => {
+      dot.className = i === currentIndex ? 'active' : '';
+    });
+  }
 
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-      updateSlide();
-    }
+  function goToSlide(index) {
+    currentIndex = index;
+    updateSlide();
+    resetInterval();
+  }
 
-    document.getElementById('next').addEventListener('click', nextSlide);
-    document.getElementById('prev').addEventListener('click', prevSlide);
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalImages;
+    updateSlide();
+  }
 
-    function resetInterval() {
-      clearInterval(interval);
-      interval = setInterval(nextSlide, 4000);
-    }
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    updateSlide();
+  }
 
-    interval = setInterval(nextSlide, 4000);
-  </script>
+  function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(nextSlide, 6000); // 6s delay
+  }
+
+  document.getElementById('next').addEventListener('click', () => {
+    nextSlide();
+    resetInterval();
+  });
+
+  document.getElementById('prev').addEventListener('click', () => {
+    prevSlide();
+    resetInterval();
+  });
+
+  // Initialize
+  updateSlide();
+  interval = setInterval(nextSlide, 6000);
+</script>
 
 
 
@@ -328,4 +405,6 @@
   </script>
 </body>
 
+
 </html>
+
