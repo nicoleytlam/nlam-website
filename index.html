@@ -235,15 +235,25 @@
     background: #6da999;
   }
 
-  @media (max-width: 768px) {
+  /* MOBILE RESPONSIVE */
+  @media (max-width: 767px) {
     #slideshow-track img {
-      max-height: 300px;
+      max-height: 240px;
+      object-fit: cover;
     }
 
     .arrow-btn {
       font-size: 20px;
+      padding: 4px 10px;
+    }
+
+    #dots span {
+      width: 8px;
+      height: 8px;
+      margin: 0 3px;
     }
   }
+  /* END MOBILE RESPONSIVE */
 </style>
 
 <section style="background-color: #041529; padding: 40px 0;">
