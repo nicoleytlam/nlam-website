@@ -162,13 +162,11 @@
         <p style="font-size: 28px; line-height: 1.6; color: #ffffff;"><strong>Nicole Lam</strong> is an orchestral conductor, musical director, pianist, and vocalist based in New York City.</p>
         <p style="margin-bottom: 0px; font-size: 16px; color: #cccccc;"><strong>Currently:</strong></p>
         <ul class="recently-bullets">
-          <li> Associate Conductor for <em>Phantom of the Opera</em> National Tour, September 2025 - 2026</li>
+          <li> Associate Music Director for <em>Hello, Dolly</em> at the Ogunquit Playhouse (Summer 2026)</li>
         </ul>
         <p style="margin-bottom: 0px; font-size: 16px; color: #cccccc;"><strong>Recently:</strong></p>
         <ul class="recently-bullets">
-          <li> Music Director for Maestra's <em>First Takes: String Theory</em>, August 2025</li>
-          <li>Associate Music Director for <em>Guys and Dolls</em> at the Ogunquit Playhouse</li>
-          <li>Assistant conductor of Yale Symphony Orchestra</li>
+          <li> Associate Conductor for <em>Phantom of the Opera</em> National Tour, 2025 - 2026</li>
         </ul>
         <div style="margin-top: 40px;">
           <a href="about.html" class="btn-flash">Learn More About Nicole</a>
@@ -254,83 +252,6 @@
   }
   /* END MOBILE RESPONSIVE */
 </style>
-<!-- 
-<section style="background-color: #041529; padding: 40px 0;">
-  <div class="container text-center">
-    <div id="slideshow-container">
-      <div id="slideshow-track"></div>
-      <button id="prev" class="arrow-btn">&#10094;</button>
-      <button id="next" class="arrow-btn">&#10095;</button>
-    </div>
-    <div id="dots"></div>
-  </div>
-</section>
-
-<script>
-  const totalImages = 13;
-  const track = document.getElementById('slideshow-track');
-  const dotsContainer = document.getElementById('dots');
-  let currentIndex = 0;
-  let interval;
-
-  // Load images and dots
-  for (let i = 1; i <= totalImages; i++) {
-    const img = document.createElement('img');
-    img.src = `img/slideshow/image${i}.jpg`;
-    track.appendChild(img);
-
-    const dot = document.createElement('span');
-    dot.addEventListener('click', () => {
-      currentIndex = i - 1;
-      updateSlide();
-      resetInterval();
-    });
-    dotsContainer.appendChild(dot);
-  }
-
-  function updateSlide() {
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    [...dotsContainer.children].forEach((dot, i) => {
-      dot.className = i === currentIndex ? 'active' : '';
-    });
-  }
-
-  function goToSlide(index) {
-    currentIndex = index;
-    updateSlide();
-    resetInterval();
-  }
-
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalImages;
-    updateSlide();
-  }
-
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-    updateSlide();
-  }
-
-  function resetInterval() {
-    clearInterval(interval);
-    interval = setInterval(nextSlide, 6000); // 6s delay
-  }
-
-  document.getElementById('next').addEventListener('click', () => {
-    nextSlide();
-    resetInterval();
-  });
-
-  document.getElementById('prev').addEventListener('click', () => {
-    prevSlide();
-    resetInterval();
-  });
-
-  // Initialize
-  updateSlide();
-  interval = setInterval(nextSlide, 6000);
-</script>
- -->
 
 
   <footer class="enhanced-footer">
