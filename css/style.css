@@ -6,16 +6,7 @@
 // 03 - Preloader
 /////////////////////////////////////////////////////////////////////*/
 
-#preloader {
-    position:fixed;
-    left:0;
-    top:0;
-    z-index:99999999999;
-    width:100%;
-    height:100%;
-    overflow:visible;
-    background: #fff url('../img/preloader.gif') no-repeat center center;
-}
+#preloader { display: none; }
 
 
 
@@ -114,7 +105,7 @@ a:active,a:hover {
 	outline: 0;
 }
 /* ==========================================================================Typography========================================================================== */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
 h1 {
 	font-size:2em;
 	margin:0.67em 0;
@@ -460,7 +451,7 @@ table {
 
 /* ==========================================================================Hero========================================================================== */
 .hero {
-	background: url('../img/title-2.jpg') right bottom no-repeat;
+	background: url('../img/title-2.webp') right bottom no-repeat;
 	background-size: contain;
 	padding:180px 0 180px 0;
 	height:auto;

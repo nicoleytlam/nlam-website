@@ -14,8 +14,6 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/footer.css" rel="stylesheet">
     <link href="img/logo_black.ico" rel="shortcut icon" type="image/x-icon" />
-    <!-- Add Masonry.js -->
-    <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
     <style>
       .news-filters {
         margin-bottom: 30px;
@@ -33,35 +31,24 @@
         color: white;
       }
       .news-grid {
-        margin: 0 -15px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 30px;
         width: 100%;
       }
-      .news-grid-sizer,
       .news-grid-item {
-        width: 33.333%;
-        padding: 15px;
+        min-width: 0;
       }
+      .news-grid-sizer { display: none; }
       @media (max-width: 991px) {
-        .news-grid-sizer,
-        .news-grid-item {
-          width: 50%;
-        }
+        .news-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       }
       @media (max-width: 767px) {
         .news-grid {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-        .news-grid-sizer,
-        .news-grid-item {
-          width: 100%;
-          margin-left: auto;
-          margin-right: auto;
-          max-width: 500px; /* or whatever looks best visually */
+          grid-template-columns: 1fr;
         }
       }
-      
+
 
       .news-card {
         background: white;
@@ -131,7 +118,7 @@
   </head>
   <body class="light-bg">
     <!-- Preloader -->
-    <div id="preloader"></div>
+
 
     <!-- Site Logo -->
     <div class="site-logo">
@@ -186,12 +173,12 @@
 
         <div class="news-grid">
           <div class="news-grid-sizer"></div>
-          
+
           <!-- Yale Schola Cantorum Album - May 18, 2025 -->
           <div class="news-grid-item wow fadeInUp" data-category="performances">
           <div class="news-card">
             <div class="news-image">
-              <img src="img/news/schola_album.jpg" alt="Yale Schola Cantorum Album" class="img-fluid">
+              <img src="img/news/schola_album.webp" alt="Yale Schola Cantorum Album" class="img-fluid" loading="lazy" decoding="async">
             </div>
             <div class="news-content">
               <span class="news-tag">Recording</span>
@@ -207,7 +194,7 @@
           <div class="news-grid-item wow fadeInUp" data-category="awards">
             <div class="news-card">
               <div class="news-image">
-                <img src="img/news/sudler.jpg" alt="Sudler Prize" class="img-fluid">
+                <img src="img/news/sudler.jpg" alt="Sudler Prize" class="img-fluid" loading="lazy" decoding="async">
               </div>
               <div class="news-content">
                 <span class="news-tag">Award</span>
@@ -223,7 +210,7 @@
           <div class="news-grid-item wow fadeInUp" data-delay="0.2s" data-category="features">
             <div class="news-card">
               <div class="news-image">
-                <img src="img/news/graduation.jpg" alt="Yale Graduation" class="img-fluid">
+                <img src="img/news/graduation.jpg" alt="Yale Graduation" class="img-fluid" loading="lazy" decoding="async">
               </div>
               <div class="news-content">
                 <span class="news-tag">Profile</span>
@@ -239,7 +226,7 @@
           <div class="news-grid-item wow fadeInUp" data-delay="0.1s" data-category="performances">
             <div class="news-card">
               <div class="news-image">
-                <img src="img/news/greece.jpg" alt="International Conducting Debut" class="img-fluid">
+                <img src="img/news/greece.webp" alt="International Conducting Debut" class="img-fluid" loading="lazy" decoding="async">
               </div>
               <div class="news-content">
                 <span class="news-tag">Performance</span>
@@ -255,7 +242,7 @@
           <div class="news-grid-item wow fadeInUp" data-delay="0.2s" data-category="performances">
             <div class="news-card">
               <div class="news-image">
-                <img src="img/news/concert_band.jpg" alt="Yale Concert Band Performance" class="img-fluid">
+                <img src="img/news/concert_band.webp" alt="Yale Concert Band Performance" class="img-fluid" loading="lazy" decoding="async">
               </div>
               <div class="news-content">
                 <span class="news-tag">Performance</span>
@@ -270,7 +257,7 @@
           <div class="news-grid-item wow fadeInUp" data-category="performances">
             <div class="news-card">
               <div class="news-image">
-                <img src="img/news/westside.jpg" alt="West Side Story" class="img-fluid">
+                <img src="img/news/westside.webp" alt="West Side Story" class="img-fluid" loading="lazy" decoding="async">
               </div>
               <div class="news-content">
                 <span class="news-tag">Performance</span>
@@ -286,7 +273,7 @@
           <div class="news-grid-item wow fadeInUp" data-delay="0.3s" data-category="awards">
             <div class="news-card">
               <div class="news-image">
-                <img src="img/news/junior.jpg" alt="Junior Honors" class="img-fluid">
+                <img src="img/news/junior.webp" alt="Junior Honors" class="img-fluid" loading="lazy" decoding="async">
               </div>
               <div class="news-content">
                 <span class="news-tag">Recognition</span>
@@ -302,7 +289,7 @@
           <div class="news-grid-item wow fadeInUp" data-delay="0.2s" data-category="performances">
             <div class="news-card">
               <div class="news-image">
-                <img src="img/news/woods.jpg" alt="Into The Woods" class="img-fluid">
+                <img src="img/news/woods.webp" alt="Into The Woods" class="img-fluid" loading="lazy" decoding="async">
               </div>
               <div class="news-content">
                 <span class="news-tag">Performance</span>
@@ -318,7 +305,7 @@
           <div class="news-grid-item wow fadeInUp" data-delay="0.3s" data-category="performances">
             <div class="news-card">
               <div class="news-image">
-                <img src="img/news/halloween.jpg" alt="YSO Halloween" class="img-fluid">
+                <img src="img/news/halloween.webp" alt="YSO Halloween" class="img-fluid" loading="lazy" decoding="async">
               </div>
               <div class="news-content">
                 <span class="news-tag">Performance</span>
@@ -334,7 +321,7 @@
           <div class="news-grid-item wow fadeInUp" data-category="features">
             <div class="news-card">
               <div class="news-image">
-                <img src="img/news/yso-conductor.jpg" alt="YSO Assistant Conductor" class="img-fluid">
+                <img src="img/news/yso-conductor.webp" alt="YSO Assistant Conductor" class="img-fluid" loading="lazy" decoding="async">
               </div>
               <div class="news-content">
                 <span class="news-tag">Appointment</span>
@@ -350,7 +337,7 @@
           <div class="news-grid-item wow fadeInUp" data-category="performances">
             <div class="news-card">
               <div class="news-image">
-                <img src="img/news/comet.jpg" alt="Great Comet" class="img-fluid">
+                <img src="img/news/comet.webp" alt="Great Comet" class="img-fluid" loading="lazy" decoding="async">
               </div>
               <div class="news-content">
                 <span class="news-tag">Performance</span>
@@ -366,7 +353,7 @@
           <div class="news-grid-item wow fadeInUp" data-category="performances">
             <div class="news-card">
               <div class="news-image">
-                <img src="img/news/serenade.jpg" alt="Great Comet" class="img-fluid">
+                <img src="img/news/serenade.webp" alt="Great Comet" class="img-fluid" loading="lazy" decoding="async">
               </div>
               <div class="news-content">
                 <span class="news-tag">Performance</span>
@@ -382,7 +369,7 @@
           <div class="news-grid-item wow fadeInUp" data-category="performances">
             <div class="news-card">
               <div class="news-image">
-                <img src="img/news/con_brio.jpg" alt="Great Comet" class="img-fluid">
+                <img src="img/news/con_brio.webp" alt="Great Comet" class="img-fluid" loading="lazy" decoding="async">
               </div>
               <div class="news-content">
                 <span class="news-tag">Performance</span>
@@ -399,7 +386,7 @@
           <div class="news-grid-item wow fadeInUp" data-category="features">
             <div class="news-card">
               <div class="news-image">
-                <img src="img/news/pasadena.jpg" alt="Pasadena Profile" class="img-fluid">
+                <img src="img/news/pasadena.webp" alt="Pasadena Profile" class="img-fluid" loading="lazy" decoding="async">
               </div>
               <div class="news-content">
                 <span class="news-tag">Profile</span>
@@ -415,7 +402,7 @@
           <div class="news-grid-item wow fadeInUp" data-category="awards">
             <div class="news-card">
               <div class="news-image">
-                <img src="img/news/csf.jpg" alt="CSF Profile" class="img-fluid">
+                <img src="img/news/csf.webp" alt="CSF Profile" class="img-fluid" loading="lazy" decoding="async">
               </div>
               <div class="news-content">
                 <span class="news-tag">Award</span>
@@ -478,44 +465,27 @@
     <script src="js/script.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        // Initialize Masonry
-        var grid = document.querySelector('.news-grid');
-        var masonry = new Masonry(grid, {
-          itemSelector: '.news-grid-item',
-          columnWidth: '.news-grid-sizer',
-          percentPosition: true,
-          transitionDuration: '0.3s'
-        });
-
-        // Filter functionality
         const filterBtns = document.querySelectorAll('.filter-btn');
-        
+
         filterBtns.forEach(btn => {
           btn.addEventListener('click', function() {
             filterBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
-            
+
             const filter = this.getAttribute('data-filter');
             const items = document.querySelectorAll('.news-grid-item');
-            
+
             items.forEach(item => {
               const shouldShow = filter === 'all' || item.getAttribute('data-category') === filter;
               item.style.display = shouldShow ? 'block' : 'none';
             });
 
-            // Re-layout Masonry after filtering
-            masonry.layout();
           });
-        });
-
-        // Layout Masonry after images have loaded
-        imagesLoaded(grid).on('progress', function() {
-          masonry.layout();
         });
       });
 
       // Initialize WOW.js for animations
-      new WOW().init();
+      if (window.WOW) new WOW().init();
     </script>
   </body>
-</html> 
+</html>
